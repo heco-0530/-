@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>특수능력관리센터 인트라넷</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg:#e6e9ef;--fg:#1d1d1f;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f1012;--fg:#f5f5f7}}
+:root[data-theme=dark]{--bg:#0f1012;--fg:#f5f5f7}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--fg);display:flex;align-items:center;justify-content:center;overflow:hidden;font-family:-apple-system,"SF Pro Text","Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif}
+#ph{position:relative;flex:none;width:417px;height:876px;padding:6px;border-radius:68px;background:linear-gradient(145deg,#a29f99,#55524d 45%,#9a978f);box-shadow:0 30px 60px rgba(0,0,0,.35)}
+#bz{width:100%;height:100%;padding:6px;border-radius:62px;background:#000}
+#sc{position:relative;width:100%;height:100%;border-radius:56px;overflow:hidden;background:#f2f2f7;color:#111;font-size:15px;line-height:1.4;word-break:keep-all;touch-action:manipulation}
+#di{position:absolute;top:11px;left:50%;margin-left:-60px;width:120px;height:35px;border-radius:20px;background:#000;z-index:60}
+#sb{position:absolute;top:0;left:0;right:0;height:54px;padding:18px 32px 0 40px;display:flex;justify-content:space-between;font-weight:600;font-size:16px;z-index:50}
+.bat{display:inline-block;width:25px;height:12px;border:1.5px solid currentColor;border-radius:4px;margin-left:6px;position:relative;vertical-align:-1px}
+.bat b{position:absolute;left:1.5px;top:1.5px;bottom:1.5px;width:70%;background:currentColor;border-radius:1.5px}
+#hi{position:absolute;bottom:8px;left:50%;margin-left:-70px;width:140px;height:5px;border-radius:3px;background:#111;z-index:55;cursor:pointer}
+#hi:after{content:"";position:absolute;inset:-12px 0}
+#app{position:absolute;inset:0}
+.v{position:absolute;inset:0;padding-top:54px;display:flex;flex-direction:column;background:#f2f2f7}
+.an{animation:sl .25s ease}@keyframes sl{from{opacity:0;transform:translateX(24px)}}
+.url{align-self:center;margin:2px 0;padding:3px 14px;border-radius:10px;background:#e3e3e8;font-size:12px;color:#555}
+.tp{display:flex;justify-content:space-between;align-items:center;padding:6px 20px 0;font-size:13px}.tp small{color:#6e6e73}
+h1{margin:6px 20px 8px;font-size:28px}
+.tb{display:flex;padding:8px 0 30px;background:#f9f9f9;border-top:.5px solid #d1d1d6}
+.tb>div{flex:1;text-align:center;font-size:11px;color:#8e8e93;cursor:pointer;position:relative}.tb>div.on{color:#0a84ff}
+.tb span{display:block;font-size:22px}.tb .ub{position:absolute;top:-4px;left:calc(50% + 6px)}
+.ub{background:#ff3b30;color:#fff;font-weight:600;font-size:12px;line-height:20px;font-family:inherit;box-sizing:border-box;min-width:20px;height:20px;border-radius:10px;text-align:center;font-style:normal;padding:0 5px}
+.nb{display:flex;align-items:center;height:44px;padding:0 16px;font-size:17px;background:#f9f9f9;border-bottom:.5px solid #d1d1d6}
+.nb b{flex:2;text-align:center}.nb b small{font-weight:400;font-size:12px;color:#8e8e93}
+.nb>a{flex:1;color:#0a84ff;cursor:pointer}.nb>span{flex:1;text-align:right}.nb span a{color:#0a84ff;cursor:pointer}
+.bd{flex:1;overflow:auto;padding-bottom:20px}
+h6{margin:18px 20px 6px;font-size:12px;color:#6e6e73;font-weight:500}
+.g{margin:10px 16px;background:#fff;border-radius:12px;overflow:hidden}h6+.g{margin-top:0}
+.c{display:flex;align-items:center;gap:12px;padding:11px 14px;border-bottom:.5px solid #ececf0;cursor:pointer}.c:last-child{border:0}
+.f{flex:1;min-width:0}.f b{display:block}
+.s{font-size:13px;color:#6e6e73;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.f small{font-weight:400;color:#8e8e93;font-size:12px}
+.av{flex:none;width:40px;height:40px;border-radius:50%;background:#e1e5ee;color:#5b6475;display:grid;place-items:center;font-size:17px;font-weight:600}.av.lg{width:84px;height:84px;font-size:36px}
+.tg{font-style:normal;font-size:11px;padding:2px 8px;border-radius:10px;background:#e5e5ea;white-space:nowrap}.tg.w{background:#ffeab5;color:#8a6100}.tg.o{background:#cdf3d6;color:#17692f}.tg.p{background:#e4e0ff;color:#4527a0}
+.pg{background:#fff;margin:10px 16px;padding:16px;border-radius:12px}.pg h3{margin:8px 0 4px}.pg p{margin:12px 0}
+.pc{text-align:center;padding:16px 0 4px}.pc .av{margin:0 auto 8px}
+.bt{margin:12px 16px;display:flex;gap:10px}.bt button{flex:1}
+button{font:inherit;border:0;border-radius:12px;padding:12px;cursor:pointer}
+.ok{background:#0a84ff;color:#fff}.pl{padding:6px 14px;border-radius:16px;background:#e8f1ff;color:#0a6fe0}
+.big{font-size:20px}
+.fab{position:absolute;right:18px;bottom:104px;width:52px;height:52px;padding:0;border-radius:50%;background:#0a84ff;color:#fff;font-size:22px;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+input,select{font:inherit;color:inherit;border:0;outline:0;background:transparent;min-width:0}
+.ib{display:flex;align-items:flex-end;gap:8px;padding:8px 12px 30px;background:#f9f9f9;border-top:.5px solid #d1d1d6}.ib.kon{padding-bottom:8px}
+.ib button{flex:none;width:36px;height:36px;padding:0;border-radius:50%;background:#0a84ff;color:#fff;font-size:18px}
+.fi{flex:1;min-height:36px;max-height:84px;overflow:hidden;background:#fff;border:.5px solid #d1d1d6;border-radius:18px;padding:7px 14px;white-space:pre-wrap;word-break:break-all;cursor:text}
+.fi.big{border:0;min-height:170px;max-height:none;padding:4px}
+.ph{color:#9a9aa0}
+.g.nw{padding:10px 12px}.nl{font-size:12px;color:#8e8e93;margin:4px 2px 4px}.g.nw .fi{flex:none;border:.5px solid #d1d1d6;border-radius:10px;padding:8px 12px;margin-bottom:8px}.g.nw .fi.big{min-height:150px;max-height:210px;padding:8px 12px}.g.nw .fi.ac{border-color:#0a84ff}
+.cr{display:inline-block;width:2px;height:17px;margin-right:1px;background:#0a84ff;vertical-align:-3px;animation:cb 1s steps(1) infinite}@keyframes cb{50%{opacity:0}}
+#msgs{display:flex;flex-direction:column;padding:10px 12px}
+.dv{align-self:center;font-size:11px;color:#8e8e93;margin:12px 0 2px}
+.r{display:flex;gap:7px;margin-top:3px;align-items:flex-start}.r.f{margin-top:11px}.r.me{justify-content:flex-end}
+.av2{flex:none;width:34px;height:34px;border-radius:50%;background:#e1e5ee;color:#5b6475;display:grid;place-items:center;font-size:15px;font-weight:600}
+.cl{display:flex;flex-direction:column;align-items:flex-start;min-width:0;max-width:78%}
+.nm{font-size:12px;color:#555;margin:0 0 3px 2px}
+.bw{display:flex;align-items:flex-end;gap:5px;max-width:100%}.r.me .bw{max-width:80%}
+.b{padding:8px 12px;border-radius:16px;background:#e5e5ea;white-space:pre-wrap;overflow-wrap:anywhere;min-width:0}
+.b.me{background:#0a84ff;color:#fff}
+.tm{font-style:normal;font-size:10px;color:#8e8e93;flex:none}
+.ty i{display:inline-block;width:7px;height:7px;margin:3px 2px;border-radius:50%;background:#8e8e93;animation:bl 1s infinite}.ty i:nth-child(2){animation-delay:.15s}.ty i:nth-child(3){animation-delay:.3s}
+@keyframes bl{50%{opacity:.25}}
+.kb{flex:none;background:#d2d5db;padding:8px 5px 0;-webkit-user-select:none;user-select:none}
+.kr{display:flex;margin-bottom:10px}.kr.r2{padding:0 16px}.kr.r3 .w:first-child{margin-right:10px}.kr.r3 .w:last-child{margin-left:10px}
+.k{flex:1;height:44px;margin:0 2.75px;border-radius:9px;background:#fff;display:grid;place-items:center;font-size:22px;font-weight:400;cursor:pointer}
+.k svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round;pointer-events:none}
+.k.dn{background:#b9bcc4}.k.w{flex:1.45;background:#abb0ba;font-size:16px}.k.w.on,.k.w.dn{background:#fff}.k.w.on svg{fill:currentColor}.k.n{height:34px;font-size:19px}
+.k.lg{flex:1}.k.sp{flex:4.4}.k.w2{flex:1.6;background:#0a84ff;color:#fff}.k.w2.dn{background:#0a6fe0}
+.k.pu{align-items:end;padding-bottom:6px;font-size:24px;line-height:1}
+.sb2{display:block;width:28px;height:9px;border:2px solid #111;border-top:0;border-radius:0 0 3px 3px;pointer-events:none}
+.le{position:relative;width:28px;height:30px;pointer-events:none}.le i{position:absolute;font-style:normal;font-size:13px;color:#8a8a8f}.le i:first-child{left:0;top:0}.le i:last-child{right:0;bottom:0}.le.h i:first-child,.le.e i:last-child{color:#111}
+.le:after{content:"";position:absolute;left:2px;top:14px;width:26px;height:1.5px;background:#555;transform:rotate(-40deg)}
+.ki{height:22px}
+.dc p{margin:12px 0}.dc ul{margin:10px 0;padding-left:20px}.dc li{margin:5px 0}.dc .nn{font-size:13px;color:#6e6e73}.sg{text-align:right;font-weight:600;margin-top:22px}
+.gy{filter:grayscale(1);opacity:.65}.vt{display:flex;gap:8px;margin-top:8px}.vb{padding:7px 14px;border-radius:16px;background:#f2f2f7;color:#555;font-size:13px}.vb.on{background:#e8f1ff;color:#0a6fe0}
+.ph{margin:10px 0;text-align:center}.ph svg{display:block;border:1px solid #888}.ppr{margin:12px;background:#fff;padding:20px 18px;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.18);font-size:13px;line-height:1.65;color:#222}.ppr h3{margin:6px 0 10px}.ppr h4{margin:14px 0 4px;font-size:14px}.ppr p{margin:6px 0}.ppr ul{margin:6px 0;padding-left:18px}.ppr .pn{text-align:center;color:#999;font-size:11px;margin-top:16px}.cf{display:inline-block;color:#b3261e;border:1.5px solid #b3261e;padding:1px 8px;font-weight:700;font-size:12px;margin-bottom:6px}.tg.i{background:#d6ecff;color:#0a5cb8}.tg.x{background:#fcd5d2;color:#a3231a}.bn{background:#e5e5ea;color:#c0281c}
+.sgm{display:flex;margin:0 16px 8px;padding:3px;background:#e3e3e8;border-radius:10px}.sgm a{flex:1;text-align:center;padding:6px 0;border-radius:8px;font-size:14px;cursor:pointer}.sgm a.on{background:#fff;font-weight:600}.sgm .ub{margin-left:3px;font-weight:600;font-size:11px;line-height:16px;font-family:inherit;min-width:16px;height:16px;padding:0 4px;display:inline-block}
+.kv{margin:12px 0;border-top:.5px solid #ececf0}.kv div{display:flex;gap:12px;padding:8px 0;border-bottom:.5px solid #ececf0}.kv span{flex:none;width:72px;color:#6e6e73;font-size:13px}.kv b{flex:1;font-weight:500}
+.ds{margin:14px 22px 6px;font-size:11px;line-height:1.5;color:#8e8e93;text-align:center}
+#nt{position:absolute;top:58px;left:12px;right:12px;z-index:70;display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:22px;background:rgba(40,40,44,.94);color:#fff;font-size:13px;transform:translateY(-130px);opacity:0;transition:.35s;cursor:pointer}
+#nt.on{transform:none;opacity:1}#nt b{font-size:14px}#nt .av{background:#555;color:#fff}
+</style></head><body>
+<div id="ph"><div id="bz"><div id="sc">
+<div id="di"></div>
+<div id="sb"><span id="ck"></span><span>5G<i class="bat"><b></b></i></span></div>
+<div id="app"></div>
+<div id="nt"></div>
+<div id="hi" data-a="go" data-v="msgs"></div>
+</div></div></div>
+<script>
+var $=function(s){return document.querySelector(s)},
+esc=function(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})},
+T0=Date.now(),hm=function(){var m=(526+Math.floor((Date.now()-T0)/60000))%1440;return ('0'+(m/60|0)).slice(-2)+':'+('0'+m%60).slice(-2)},
+rnd=function(a){return a[Math.random()*a.length|0]};
+var P=[{n:'김운학',t:'가이드'},{n:'강태건',t:'팀장'},{n:'박성호',t:'센티넬'},{n:'이도윤',t:'센티넬'},{n:'서하린',t:'가이드'},{n:'정우진',t:'센티넬'},{n:'오세아',t:'가이드'}];
+function ps(s){var d,o=[];s.split('\n').forEach(function(l){if(!l)return;if(l[0]=='#')d=l.slice(1);else{var a=l.split(' ');o.push({m:+a[0],w:a[1],d:d,t:a.slice(2).join(' ')})}});return o}
+var S={c:{},u:{6:1},o:[1,2,6,4,3,5],typ:0,lt:0,att:null,f:{},h:{},dt:0,leave:11.5,reqs:[],kb:0,en:0,sym:0,t:'',nb:'',fo:'t',sh:0,ph:'',cx:{},ec:{}};
+S.c[2]=ps('#2025.12.03\n1 22:14 형 어디야? 숙소 가는 중이야?\n0 22:16 응 거의 다 왔어 너 먼저 도착했어?\n1 22:16 나 벌써 와서 씻었어ㅋㅋ 보고싶어서 빨리 왔어\n0 22:18 나도 보고싶었어 오늘 하루종일\n1 22:18 ㅋㅋㅋ 빨리 와 라면 끓여놨어\n0 22:19 오 센스 좋은데? 5분이면 가\n1 22:19 천천히 와도 되는데 빨리 와\n0 22:20 어쩌라는 거야 ㅋㅋㅋ\n#2025.12.24\n1 20:03 형 오늘 이브인데 야근이야?\n0 20:10 응 심문 하나 남았어 ㅠㅠ 미안\n1 20:11 괜찮아 케이크 사놨어 기다릴게\n0 20:12 먹지 말고 기다려 한 시간이면 끝나\n1 20:12 알았어 보고싶다\n0 20:13 나도 보고싶어 금방 갈게\n#2026.01.15\n0 23:40 어디야? 안 들어와?\n1 23:41 서류 마감이라 아직 센터야 ㅠ 형은?\n0 23:42 난 숙소 보고싶어서 전화하려다 말았어ㅋㅋ\n1 23:43 전화해 그냥 나도 듣고 싶어\n0 23:44 ㅋㅋㅋ 지금 걸게\n#2026.03.08\n1 21:02 형 어디야?\n0 00:15 나 이제 심문 끝냈어 방금\n1 00:17 수고했어 나도 이제 가\n#2026.03.29\n0 19:20 오늘 저녁 어떻게 해?\n1 22:40 아 미안 이제 봤어 서류 정리하다가 늦었어\n0 22:42 괜찮아 난 먹었어\n1 22:43 응 알았어\n#2026.04.19\n1 20:11 형 어디야?\n0 23:05 나 이제 막 끝났어 오늘 심문이 길었어\n1 23:06 고생했어 나도 오늘 현장 나갔다 왔어\n0 23:08 오 너도? 힘들었겠네\n1 23:08 응 좀 얼른 자\n#2026.05.20\n0 22:11 어디야?\n1 01:30 아 폰 못 봤어ㅠ 센터 야근이었어\n0 01:32 응 괜찮아 나 먼저 잔다\n1 01:32 응 잘 자\n#2026.06.07\n1 19:05 나 오늘 좀 늦을 것 같아\n0 19:30 응 알겠어\n1 19:31 저녁 먼저 먹어\n#2026.06.18\n0 17:50 언제 와?\n1 17:55 오늘 늦을 것 같아\n0 17:56 얼마나?\n1 17:58 모르겠어 먼저 자\n0 19:40 어디야?\n1 22:15 아직 센터야 오늘은 좀 힘들 것 같아\n0 22:20 그래\n0 22:21 오늘 대화 좀 하자\n1 22:40 응 알겠어 이따 숙소 가서 얘기해\n#2026.06.19\n0 08:30 어제 얘기한 대로 짐은 이번 주에 뺄게\n1 08:41 응 천천히 해도 돼\n0 08:42 고마워\n#2026.06.22\n0 21:10 열쇠 경비실에 맡겨놨어\n1 21:15 응 확인했어 잘 지내\n0 21:16 너도\n#2026.08.14\n1 12:20 형 어디야? 서류 올릴 거 있어?\n0 12:55 심문 중이었어 조서 오늘 저녁에 넘길게\n1 12:56 응 천천히 줘\n#2026.09.30\n0 18:05 내일 조서 두 건 넘어가\n1 18:06 응 받을게 형 밥은 먹었어?\n0 20:30 아 아직 이따 먹어야지\n1 20:31 챙겨 먹어\n#2026.10.22\n1 20:15 형 어디야?\n0 23:10 나 이제 심문 끝냈어 내일 아침에 얘기하자\n#오늘\n1 11:02 형 이번엔 진짜 가이딩 받아야 되는 거 알지?\n0 11:40 어 알지 알지 근데 이번 주는 좀 정신없어서\n1 11:41 지난번에도 그랬잖아\n0 11:43 아 알아~ 곧 할게 내가 연락할게\n1 11:44 오늘 저녁은 어때? 나 괜찮은데\n0 12:10 오늘은 좀 힘들 것 같아 다음에 얘기하자\n1 12:11 알겠어 그래도 꼭 해야 돼');
+S.c[1]=ps('#2026.10.26\n0 11:20 얘기 들었어요\n0 11:21 휴가 처리해 둘 테니까 푹 쉬고 와요 일은 걱정 말고요\n1 11:48 감사합니다 팀장님\n#2026.11.02\n0 17:30 운학씨 내일 일정 공유드려요 오전엔 사무실 업무, 오후엔 문서 정리예요\n1 17:32 네 확인했습니다\n0 18:20 내일 정기 적합도 검사 있는 거 알죠? 박성호 센티넬이랑 같이 받으세요 시간 맞춰서 같이 가요\n#오늘\n0 07:50 운학씨 잠깐 얘기 괜찮아요?\n0 07:51 박성호 센티넬 가이딩 수치 쪽 신경 좀 써주세요 요즘 조금 불안정한 것 같아서요\n1 07:54 네 알겠습니다 이번 주 안에 챙겨볼게요\n0 07:55 고마워요 무리하지는 말고요\n1 07:55 넵');
+S.c[4]=ps('#2026.11.02\n0 12:05 운학씨 점심 같이 가요?\n1 12:06 좋아요 12시 반에 로비에서 봬요');
+S.c[3]=ps('#2026.10.30\n0 17:40 조서 초안 올려놨는데 혹시 확인 부탁드려도 될까요?\n1 17:55 확인했어요 오탈자만 고쳐서 정리해둘게요');
+S.c[5]=ps('#2026.10.26\n0 15:40 사고·이상 상황 보고서 건 팀장님께 보고 올라간 거 맞죠?\n1 15:55 네 오전에 보고드렸어요');
+S.c[6]=ps('#오늘\n0 08:20 운학씨 11월 4일 현장 지원 일정 확인하셨어요? 출발은 18시 30분이에요');
+var D=[{t:'현장 업무 지원 근무 편성 변경 안내',d:'운영지원과',w:'2026.10.30',b:'<p>최근 현장 업무 지원 수요 증가에 따라 근무 편성을 아래와 같이 변경하오니 업무에 참고하여 주시기 바랍니다.</p><ul><li>시행일: 11월 2일(월)부터</li><li>대상: 사무 담당 가이드 및 현장대응 지원 인력</li><li>내용: 방화 사건 추가 조사 관련 현장 지원 시 야간 복귀 인원 사전 신청, 초과근무 사전 결재</li><li>유의: 차량 신청서 및 탑승 인원 사전 등록 필수</li></ul><p class=nn>※ 문의: 운영지원과</p>'},
+{t:'11월 정기 적합도 검사 및 매칭 일정 안내',d:'배정·매칭과',w:'2026.10.28',b:'<p>11월 정기 적합도 검사 및 센티넬·가이드 매칭이 아래 일정에 따라 진행됩니다.</p><ul><li>검사 기간: 11월 3일(화) ~ 11월 5일(목)</li><li>대상: 정기검사 대상자로 지정된 센티넬 및 가이드</li><li>장소: 의료·회복부 검사실</li><li>소요 시간: 1인당 약 2시간</li><li>결과 확인: 검사 종료 후 개별 통보</li></ul><p>검사 대상자는 지정된 시간에 맞춰 방문해 주시기 바랍니다. 검사 전날에는 과도한 능력 사용을 자제하고 충분히 휴식해 주시기 바랍니다.</p><p>검사 일정 변경이 필요한 경우 배정·매칭과로 사전 문의해 주십시오.</p>'},
+{t:'하반기 능력 등급 정기 재평가 안내',d:'평가·등급관리과',w:'2026.10.27',b:'<p>등록 능력자의 능력 등급 및 현장 대응 적합도를 확인하기 위한 하반기 정기 재평가를 실시합니다.</p><ul><li>평가 기간: 11월 30일(월) ~ 12월 11일(금)</li><li>대상: 전체 등록 능력자</li><li>담당 부서: 평가·등급관리과</li><li>평가 항목: 능력 안정성, 통제력, 현장 대응 능력 및 위험도</li></ul><p>평가 결과에 따라 등급 또는 임무 배정에 변동이 있을 수 있습니다.</p><p>개별 평가 일정은 소속 부서를 통해 안내될 예정이며, 평가 당일에는 센터 출입증을 지참하여 평가실로 방문해 주시기 바랍니다.</p>'},
+{t:'보안 점검 강화 및 문서 관리 지침 개정 안내',d:'보안관리과',w:'2026.10.29',b:'<p>문서 관리의 정확성과 보안 확보를 위하여 관련 지침을 아래와 같이 개정하오니 숙지하여 주시기 바랍니다.</p><ul><li>시행일: 11월 9일(월)</li><li>문서 작성·수정·삭제 이력의 전수 기록</li><li>허위 기재 및 무단 삭제 금지, 위반 시 감사 및 징계 절차 진행</li><li>대외비 문서 열람 시 사전 권한 부여 필수</li></ul><p class=nn>※ 정기 보안 점검이 수시로 실시될 수 있습니다.</p>'},
+{t:'심문실 2 사용 중지 안내',d:'시설관리부',w:'2026.10.26',b:'<p>사고 경위 확인 및 시설 안전 점검을 위하여 심문실 2의 사용을 당분간 중지합니다.</p><ul><li>중지 기간: 별도 공지 시까지</li><li>대상: 심문실 2 배정 건 전체</li><li>조치: 기존 배정 건은 담당 부서를 통해 재배정</li></ul><p>문의는 시설관리부로 해 주시기 바랍니다. 심문실 2 출입은 통제됩니다.</p>'},
+{t:'등록 능력자 개인정보 및 능력정보 관리 강화 안내',d:'정보보안과',w:'2026.10.19',b:'<p>등록 능력자의 개인정보 및 능력 관련 정보 보호를 위해 내부 정보 관리 기준을 강화합니다.</p><p>능력 등급, 적합도, 임무 기록 등 보호 대상 정보는 지정된 업무 담당자에 한하여 열람할 수 있습니다.</p><p>개인정보 및 능력정보의 외부 제공이 필요한 경우 기존 절차에 따른 사전 승인을 받아야 합니다.</p><p>열람 이력은 기록·관리되오니 업무 목적 범위 안에서 이용해 주시기 바랍니다.</p>'},
+{t:'능력자 전용 시설 이용 안내',d:'시설관리부',w:'2026.10.14',b:'<p>능력자의 원활한 업무 및 회복을 위해 센터 내 일부 시설의 이용 기준이 변경됩니다.</p><ul><li>능력자 전용 휴게실 이용 시간 조정</li><li>센티넬·가이드 전용 가이딩실 운영시간 확대</li><li>개인 훈련실 예약제 시행</li><li>임무 종료 후 회복시설 우선 이용 대상 지정</li></ul><p>개인 훈련실 예약은 인트라넷에서 가능하며, 임무 종료 직후에는 예약 없이 회복시설을 우선 이용할 수 있습니다.</p><p>시설 이용과 관련한 자세한 사항은 각 관리부에 문의해 주시기 바랍니다.</p>'},
+{t:'센티넬·가이드 현장 동행 기준 안내',d:'배정·매칭과',w:'2026.10.08',b:'<p>현장 임무 수행 시 센티넬의 안정적인 능력 사용과 임무 수행을 지원하기 위해 가이드 동행 기준을 일부 조정합니다.</p><p>임무의 위험도 및 센티넬의 상태에 따라 전담 또는 지원 가이드가 배정될 수 있으며, 장기 임무의 경우 교대 인력이 추가로 배정될 수 있습니다.</p><p>세부 배정 기준은 배정·매칭과에서 별도로 안내합니다.</p>'},
+{t:'2026년 하반기 정기 인사발령 안내',d:'인사관리과',w:'2026.09.24',b:'<p>특수능력관리센터 인사관리규정에 따라 2026년 하반기 정기 인사발령을 아래와 같이 시행합니다.</p><ul><li>발령일자: 2026년 10월 1일(목)</li><li>대상: 전 부서 직원 및 등록 능력자</li><li>주요 내용: 부서 이동, 직무 변경, 팀장 보직 발령</li></ul><p>주요 발령 사항은 다음과 같습니다.</p><ul><li>팀장 보직: 윤도현(현장대응1팀), 한서진(심문분석과), 문지안(구조지원팀)</li><li>부서 이동: 백승우(센티넬)·류하은(가이드) 페어, 감시대응팀 → 특수구조대</li><li>직무 변경: 장민재(현장 지원 → 자료관리), 신예린(심문 보조 → 조서관리)</li><li>신규 임용: 조현우(센티넬)·민서아(가이드) 페어, 현장대응3팀 배치</li></ul><p>세부 발령 사항은 내부 인사 시스템에서 확인하시기 바랍니다.</p><p class=nn>※ 발령 대상자는 변경된 소속 및 담당 업무를 반드시 확인해 주시기 바랍니다.</p>'}];
+var M=[
+{ty:'확인',t:'사무실 정기 청소 및 점검 일정 확인',f:'시설관리부',w:'08:20',s:'w',ok:['확인 완료','확인 완료됨'],fn:function(){},
+kv:[['발신','시설관리부'],['제목','사무실 정기 청소 및 점검 일정'],['일시','2026.11.05(목) 12:00 ~ 13:00'],['대상','사무동 3층 전체']],
+b:'<p>1. 관련: 시설 정기 점검 계획</p><p>2. 사무동 3층 정기 청소 및 설비 점검을 아래와 같이 시행하오니, 해당 시간에는 자리를 비워 주시기 바랍니다.</p><ul><li>가. 일시: 11월 5일(목) 12:00 ~ 13:00</li><li>나. 내용: 바닥 청소, 정수기 필터 교체, 조명 점검</li></ul><p>3. 개인 물품은 서랍에 보관하여 주시기 바랍니다. 이상입니다.</p>'},
+{ty:'확인',t:'주간 팀 회의 일정 변경 확인',f:'강태건 팀장',w:'08:30',s:'w',id:1,ok:['확인 완료','확인 완료됨'],r:['확인했어요 고마워요'],
+kv:[['발신','강태건 팀장'],['제목','주간 팀 회의 일정 변경'],['변경 일시','2026.11.04(수) 16:00'],['장소','소회의실 B']],
+b:'<p>1. 관련: 주간 업무 회의 개최 계획</p><p>2. 정기 적합도 검사 일정을 고려하여 주간 업무 회의 일정을 아래와 같이 변경하여 통보합니다.</p><ul><li>가. 일시: 11월 4일(수) 16:00</li><li>나. 장소: 소회의실 B</li><li>다. 안건: 주간 업무 현황 공유, 현장 지원 일정 확인</li></ul><p>3. 불참이 예상되는 경우 사전에 보고하여 주시기 바랍니다. 이상입니다.</p>'},
+{ty:'확인',t:'현장 지원 차량 사용 신청서',f:'오세아 가이드',w:'07:50',s:'w',id:6,ok:['확인 완료','확인 완료됨'],r:['확인 감사합니다 :)'],
+kv:[['신청자','오세아 가이드'],['사용 일시','11월 4일(수) 18:30 출발'],['목적지','3구역 현장 지원'],['지원 내용','방화 사건 추가 조사 지원'],['탑승 인원','5명 (서하린·오세아·이도윤·최윤아·김운학)'],['차량','센터 차량 2호']],
+b:'<p>1. 관련: 도심 상가 방화 사건 추가 조사</p><p>2. 위 사건의 추가 조사에 따라 3구역 일대에서 현장 지원이 시행되며, 공용 차량 배차 계획을 아래와 같이 통보하오니 확인하여 주시기 바랍니다.</p><ul><li>가. 일시: 11월 4일(수) 18:30 출발, 22:00 복귀 예정</li><li>나. 지원 내용: 현장 일대 추가 조사 지원 및 현장 기록 정리</li><li>다. 탑승 인원: 5명</li></ul><p>3. 이상입니다.</p>'},
+{ty:'검토',t:'조서 초안 검토 요청',f:'이도윤 센티넬',w:'08:10',s:'w',id:3,at:0,ok:['검토 완료','검토 완료'],no:['수정 요청','수정 요청됨'],r:['확인 감사합니다 수고 많으셨어요','네 수정해서 다시 올릴게요'],
+kv:[['작성자','이도윤 센티넬'],['사건명','도심 상가 방화 사건'],['사건 번호','2026-1022-04'],['분량','조서 초안 8쪽 (첨부)'],['검토 기한','오늘 18:00'],['확인 사항','오탈자·인적사항 누락']],
+b:'<p>1. 관련: 도심 상가 방화 사건 피의자 진술 조서 작성 건</p><p>2. 위 사건의 피의자 진술 조서 초안을 송부하오니, 진술 내용의 오기 및 인적사항 누락 여부를 검토하여 주시기 바랍니다.</p><p>3. 초안 전문은 붙임 파일로 확인하실 수 있으며, 내용은 외부에 공개되지 않도록 유의하여 주시기 바랍니다. 이상입니다.</p>'},
+{ty:'접수',t:'심문 조서 인계서',f:'박성호 센티넬',w:'08:25',s:'w',id:2,at:1,ok:['접수 처리','접수 완료'],no:['보완 요청','보완 요청됨'],r:['확인했어','알았어 다시 보낼게'],
+kv:[['인계자','박성호 센티넬(심문 담당)'],['인계 건수','조서 2건, 용의자 2명'],['사건 번호','2026-1019-02'],['인계 일시','오늘 11:50']],
+b:'<p>1. 관련: 장기매매 사건 피의자 심문</p><p>2. 위 사건 피의자 2명에 대한 심문 조서 2건을 인계하오니, 붙임의 피의자 정보를 확인하신 후 접수하여 주시기 바랍니다. 이상입니다.</p>'}];
+var cs=function(){return [].slice.call(arguments).map(function(x){var i=x.indexOf(' ');return [x.slice(i+1),x.slice(0,i)]})};
+var B=[{t:'주말 대기조 걸린 사람 손',b:'나 토요일 대기조인데 아무 일도 안 터졌으면 좋겠다 제발',w:'8분 전',v:212,l:31,k:0,c:cs('1 제발 아무 일도 없길','2 대기조는 항상 터지더라 ㅋㅋ','o 작성자인데 아직까진 조용해요','3 손')},
+{t:'심문실 2 아직도 못 쓰는 거임?',b:'다른 층 심문실 예약 잡기 너무 힘든데 언제 풀리는지 아는 사람',w:'25분 전',v:318,l:19,k:0,c:cs('1 공지에 별도 공지 시까지라고만 나와 있음','2 그때 일 때문이라던데 자세한 건 모르겠음','3 예약 시스템 터지기 직전임')},
+{t:'탕비실 믹스커피 또 떨어짐',b:'분명 어제 새 박스 뜯었는데 벌써 없음',w:'40분 전',v:244,l:21,k:0,c:cs('1 범인은 우리 팀임','2 건의함에 올려요','o 작성자인데 제가 마신 건 아님 ㅋㅋ')},
+{t:'사무실 에어컨 누가 자꾸 18도로 맞춤?',b:'센티넬이라 체온 높은 건 알겠는데 가이드는 얼어 죽는다',w:'1시간 전',v:530,l:57,k:0,c:cs('1 ㅋㅋㅋㅋ 인정','2 담요 사세요','3 범인 알 것 같다')},
+{t:'구내식당 오늘 제육 실화냐',b:'고기가 어디 갔냐 양파만 한가득',w:'3시간 전',v:340,l:22,k:0,c:cs('1 어제 돈까스는 괜찮았는데','2 양파 팀 승')},
+{t:'비 오는 날 빗소리 때문에 집중 안 되는 사람',b:'센티넬 분들 오늘 괜찮으세요? 창가 자리라 더 크게 들림',w:'4시간 전',v:389,l:36,k:0,c:cs('1 저도 귀마개 끼고 있음','2 블라인드 내리면 좀 나아요','3 가이드는 모르는 고통이네요 ㅠㅠ')},
+{t:'퇴근 5분 전에 일 던지는 사람 특징',b:'다들 하나씩 생각나는 사람 있지?',w:'어제',v:1204,l:74,k:0,c:cs('1 ㄹㅇㅋㅋㅋ 바로 떠오름','2 말투가 "혹시 바쁘세요?"로 시작함','o 다들 같은 사람 떠올리는 거 맞죠','3 5분 전도 아니고 1분 전임')},
+{t:'엘리베이터 출근 시간에 왜 이렇게 안 와요',b:'8시 40분에 타려면 5분은 기다려야 함',w:'어제',v:301,l:24,k:0,c:cs('1 계단 이용 추천','2 3층인데 계단이 더 빠름','o 3층이라 계단 탔습니다 ㅋㅋ')},
+{t:'센터 주차장 자리 없어서 지각함',b:'8시 반에 와도 자리가 없는 게 말이 되냐',w:'어제',v:287,l:16,k:0,c:cs('1 일찍 와야 함 ㅠ','2 외부 주차장 알아보세요')},
+{t:'월급 들어오면 제일 먼저 뭐함?',b:'나는 통장 보고 한숨부터 쉼',w:'2일 전',v:698,l:41,k:0,c:cs('1 카드값 정리','2 치킨 시킴','3 월급은 통과의례임 ㅋㅋ')},
+{t:'퇴근길 2호선 같이 타고 가실 분',b:'야근 없는 날 같이 가요 할 얘기 없어도 됨',w:'3일 전',v:268,l:15,k:0,c:cs('1 조용히 가는 거 좋음','2 저도 2호선인데 시간 맞으면 ㅎㅎ')},
+{t:'옆자리 향수 때문에 죽겠음',b:'후각 예민한 사람 입장도 생각해주세요.. 향수 뿌리고 오는 건 테러임',w:'3일 전',v:921,l:63,k:0,c:cs('1 ㅠㅠ 인정 진짜','2 센티넬이면 더 힘들듯','o 말해봤자 소용없더라고요','3 향수 대신 비누향이 최고')},
+{t:'연차 쓸 때 눈치 보이는 사람?',b:'나만 그런가 싶어서 올려봄',w:'4일 전',v:455,l:35,k:0,c:cs('1 눈치 안 보면 승자','2 사유란 쓰는 것부터 부담','o 다들 같네요 ㅋㅋ')}];
+B.forEach(function(b){b.d=Math.round(b.l/10)});
+var L={w:'결재 대기',o:'승인'},TV={msgs:1,docs:1,hr:1,bd:1},TB=[['msgs','💬','메시지'],['docs','📄','문서'],['hr','🧑‍💼','인사'],['bd','📋','게시판']];
+var st=[],cur={v:'msgs'},nto,rt;
+var CH='ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ',JU='ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ',JO=' ㄱㄲㄳㄴㄵㄶㄷㄹㄺㄻㄼㄽㄾㄿㅀㅁㅂㅄㅅㅆㅇㅈㅊㅋㅌㅍㅎ',
+FC={'ㄳ':'ㄱㅅ','ㄵ':'ㄴㅈ','ㄶ':'ㄴㅎ','ㄺ':'ㄹㄱ','ㄻ':'ㄹㅁ','ㄼ':'ㄹㅂ','ㄽ':'ㄹㅅ','ㄾ':'ㄹㅌ','ㄿ':'ㄹㅍ','ㅀ':'ㄹㅎ','ㅄ':'ㅂㅅ'},
+VC={'ㅘ':'ㅗㅏ','ㅙ':'ㅗㅐ','ㅚ':'ㅗㅣ','ㅝ':'ㅜㅓ','ㅞ':'ㅜㅔ','ㅟ':'ㅜㅣ','ㅢ':'ㅡㅣ'},
+KO=['ㅂㅈㄷㄱㅅㅛㅕㅑㅐㅔ','ㅁㄴㅇㄹㅎㅗㅓㅏㅣ','ㅋㅌㅊㅍㅠㅜㅡ'],EN=['qwertyuiop','asdfghjkl','zxcvbnm'],SH={'ㅂ':'ㅃ','ㅈ':'ㅉ','ㄷ':'ㄸ','ㄱ':'ㄲ','ㅅ':'ㅆ','ㅐ':'ㅒ','ㅔ':'ㅖ'};
+function mk(c,v,f){return String.fromCharCode(44032+(c*21+v)*28+f)}
+function sp(ch){var n=ch?ch.charCodeAt(0)-44032:-1;return n>=0&&n<11172?[n/588|0,(n%588)/28|0,n%28]:null}
+function fd(M,x){for(var k in M)if(M[k]==x)return k}
+function hg(s,j){var l=s.slice(-1),h=s.slice(0,-1),p=sp(l),k,f,q;
+if(JU.indexOf(j)<0){if(p){f=JO.indexOf(j);
+if(!p[2]&&f>0)return h+mk(p[0],p[1],f);
+if(p[2]&&(k=fd(FC,JO[p[2]]+j)))return h+mk(p[0],p[1],JO.indexOf(k))}}
+else if(p){if(!p[2]){if(k=fd(VC,JU[p[1]]+j))return h+mk(p[0],JU.indexOf(k),0)}
+else{q=FC[JO[p[2]]];return h+mk(p[0],p[1],q?JO.indexOf(q[0]):0)+mk(CH.indexOf(q?q[1]:JO[p[2]]),JU.indexOf(j),0)}}
+else if(l&&CH.indexOf(l)>=0)return h+mk(CH.indexOf(l),JU.indexOf(j),0);
+return s+j}
+function bs(s){var h=s.slice(0,-1),p=sp(s.slice(-1)),q;if(!p)return h;
+if(p[2]){q=FC[JO[p[2]]];return h+mk(p[0],p[1],q?JO.indexOf(q[0]):0)}
+q=VC[JU[p[1]]];return q?h+mk(p[0],JU.indexOf(q[0]),0):h+CH[p[0]]}
+function kc(c){return S.sh?(S.en?c.toUpperCase():SH[c]||c):c}
+var SY=['!@#$%^&*()','-_=+/:;"~',"?'<>[]|"],IC={sh:'<svg viewBox="0 0 24 24"><path d="M12 3l9 9h-5v8H8v-8H3z"/></svg>',bk:'<svg viewBox="0 0 24 24"><path d="M9 5h11a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H9l-6-7z"/><path d="M12 9l5 6M17 9l-5 6"/></svg>',en:'<svg viewBox="0 0 24 24"><path d="M20 5v7a2 2 0 0 1-2 2H5M9 10l-4 4 4 4"/></svg>'};
+function kb1(c,x){return '<b class="k'+(x||'')+'" data-k="'+esc(c)+'">'+esc(c)+'</b>'}
+function kbd(){if(!S.kb)return '';var h='<div class=kb><div class=kr>'+'1234567890'.split('').map(function(c){return kb1(c,' n')}).join('')+'</div>';
+(S.sym?SY:S.en?EN:KO).forEach(function(r,i){h+='<div class="kr'+(i==1?' r2':i==2?' r3':'')+'">'+(i==2?(S.sym?'<b class="k w"></b>':'<b class="k w'+(S.sh?' on':'')+'" data-k=⇧>'+IC.sh+'</b>'):'')+r.split('').map(function(c){return kb1(S.sym?c:kc(c))}).join('')+(i==2?'<b class="k w" data-k=⌫>'+IC.bk+'</b>':'')+'</div>'});
+return h+'<div class=kr><b class="k w" data-k=SYM>'+(S.sym?(S.en?'ABC':'한글'):'!#1')+'</b><b class="k w lg" data-k=LANG><span class="le '+(S.en?'e':'h')+'"><i>한</i><i>영</i></span></b><b class="k pu" data-k=",">,</b><b class="k sp" data-k=_><i class=sb2></i></b><b class="k pu" data-k=".">.</b><b class="k w2" data-k=↵>'+IC.en+'</b></div><div class=ki></div></div>'}
+function rk(){var o=$('.kb');if(o)o.outerHTML=kbd()}
+function fc(f){var b=f=='b',n=cur.v=='new',tx=b?S.nb:S.t,ac=S.kb&&(!n||S.fo==(b?'b':'t')),c=ac?'<i class=cr></i>':'';return tx?esc(tx)+c:c+'<span class=ph>'+(b?'내용을 입력하세요':S.ph)+'</span>'}
+function fld(big,f){f=f||'t';return '<div class="fi'+(big?' big':'')+(cur.v=='new'&&S.kb&&S.fo==f?' ac':'')+'" id='+(f=='b'?'tb':'ti')+' data-a=fk data-f='+f+'>'+fc(f)+'</div>'}
+function ftxt(){['ti','tb'].forEach(function(id){var e=$('#'+id);if(e){e.innerHTML=fc(id=='tb'?'b':'t');e.scrollTop=e.scrollHeight}})}
+function key(c){var K=cur.v=='new'&&S.fo=='b'?'nb':'t',mx=cur.v=='new'?(K=='nb'?800:60):200;if(c!='⌫'&&c!='⇧'&&c!='↵'&&c!='LANG'&&c!='SYM'&&S[K].length>=mx)return;
+if(c=='⇧'){S.sh=!S.sh;rk();return}
+if(c=='↵'){if(cur.v=='new'){if(K=='t'){S.fo='b';draw(false)}else if(S.nb.length<mx){S.nb+='\n';ftxt()}return}sub();return}
+if(c=='LANG'){S.en=!S.en;S.sh=0;rk();return}if(c=='SYM'){S.sym=!S.sym;S.sh=0;rk();return}
+S[K]=c=='⌫'?bs(S[K]):c=='_'?S[K]+' ':hg(S[K],c);if(S.sh&&c!='⌫'){S.sh=0;rk()}ftxt()}
+function av(p,l){return '<span class="av'+(l?' lg':'')+'">'+p.n[0]+'</span>'}
+function nb(t,r){return '<div class=nb><a data-a=back>‹ 뒤로</a><b>'+t+'</b><span>'+(r||'')+'</span></div>'}
+function tp(t){return '<div class=url>🔒 intra.scc.example</div><div class=tp><b>🛡️ 특수능력관리센터</b><small>김운학 · 가이드</small></div><h1>'+t+'</h1>'}
+function unread(){return Object.keys(S.u).reduce(function(s,k){return s+S.u[k]},0)}
+function tabs(a){var n=unread(),pn=M.filter(function(d){return d.s=='w'}).length;return '<div class=tb>'+TB.map(function(x){return '<div class="'+(x[0]==a?'on':'')+'" data-a=go data-v='+x[0]+'><span>'+x[1]+'</span>'+x[2]+(x[0]=='msgs'&&n?'<i class=ub>'+n+'</i>':'')+(x[0]=='docs'&&pn?'<i class=ub>'+pn+'</i>':'')+'</div>'}).join('')+'</div>'}
+function stl(d){return d.s=='w'?'처리 대기':d.s=='i'?'열람 가능':d.s=='o'?d.ok[1]:d.no[1]}
+function bump(id){S.o=[id].concat(S.o.filter(function(i){return i!=id}))}
+function vw(b){return Math.max(b.v,b.c.length*3+b.l+2)}
+var NEG=/아뇨|아니요|아니오|아니에요|아직|못 ?봤|안 ?봤|못 ?했|몰라|모르|없어요|확인 ?안|확인 ?못/,
+POS=/^(네|넵|옙|예|응|ㅇㅇ)|확인했|봤어요|봤습니다|알겠|좋아|좋습니다|괜찮|콜|오케이|ㅇㅋ|그럼요|물론|맞아요|그렇죠|그러게/,
+NO=/싫|별로|아니|말고|다른 ?거|안 ?땡|안 ?끌|못 ?먹|ㄴㄴ|패스|글쎄/,
+BAD=/시발|씨발|ㅅㅂ|ㅆㅂ|병신|ㅂㅅ|개새|새끼|지랄|ㅈㄹ|존나|ㅈㄴ|좆|닥쳐|꺼져|미친|염병|씹|썅/,
+WHY=/왜|무슨|뭔|어째|이유|뭐 ?때문|어떻게 ?된|궁금/,
+ACK=/^(네|넵|넹|예|응|ㅇㅇ|ㅇㅋ|오케이|알겠어요|알겠습니다|확인했어요|확인했습니다)[!~ ]*$/,
+QST=/\?|어때|어떻|뭐예요|뭐에요|언제|어디|누구|왜|몇/;
+function ro(w){var c=w.charCodeAt(w.length-1)-44032,f=c>=0&&c<11172?c%28:-1;return w+(f<=0||f==8?'로':'으로')}
+function pk(id,a,q){var h=S.h[id]=S.h[id]||[],k=JSON.stringify,c,l=h[h.length-1];
+if(q){for(var i=0;i<a.length;i++)if(h.indexOf(k(a[i]))<0){c=a[i];break}if(c===undefined)c=a[(a.map(k).indexOf(l)+1)%a.length]}
+else{c=a.filter(function(x){return h.slice(-6).indexOf(k(x))<0});if(!c.length)c=a.filter(function(x){return k(x)!=l});if(!c.length)c=a;c=c[Math.random()*c.length|0]}
+h.push(k(c));if(h.length>40)h.shift();return c}
+var TOP=[
+[/안녕|하이|반가/,['안녕하세요~','네 안녕하세요 :)','안녕하세요 무슨 일이세요?'],['네 안녕하세요','운학씨 안녕하세요','네 무슨 일 있어요?']],
+[/감사|고마/,['별말씀을요 :)','아니에요 도움이 됐다면 다행이에요','천만에요'],['아니에요 운학씨가 잘 해줘서 그래요','별말씀을요 고마워요']],
+[/퇴근|수고|고생/,['수고하셨어요! 조심히 들어가세요','오늘도 고생 많으셨어요','네 수고하셨어요 내일 봬요'],['운학씨도 수고했어요','오늘도 고생 많았어요 조심히 들어가요']],
+[/점심|밥|식사/,['구내식당 아니면 밖에서요?','저도 이따 먹으러 가려고요','맛있게 드세요'],['점심은 아직이에요 먼저 드세요','맛있게 먹고 와요','저는 이따 먹을 것 같아요']],
+[/가이딩|수치/,['그건 두 분이 얘기하는 게 맞을 것 같아요','저는 제 파트너 쪽만 알아서요','제가 말씀드리기는 조심스러워요'],['수치는 계속 지켜보고 있어요 운학씨는 무리하지 말고 편할 때 챙겨주세요','가이딩은 일정에 맞춰서 천천히 해도 돼요','수치 변화 있으면 저한테도 알려줘요']],
+[/서류|조서|접수|결재|문서|보고서/,['문서함에서 확인해 주시면 돼요','급한 건 문서함에 표시해 뒀어요','확인하시고 처리해 주시면 돼요'],['문서함에 올라온 건 운학씨 판단대로 처리해 주세요','급한 건 먼저 봐 주세요','결재 올라오면 제가 마저 볼게요']],
+[/현장|출동|구조|이동|집결|일정/,['일정은 문서함에 올라온 대로 진행돼요','내일 6시 반에 3구역 집결이에요','이동 전에 한 번 더 공유드릴게요'],['내일 저녁 6시 반에 3구역 현장 지원이 있어요','자세한 건 오세아 가이드가 안내해 줄 거예요','필요한 건 제가 따로 챙겨둘게요']],
+[/회의|미팅/,['몇 시에요? 일정 확인해볼게요','회의록은 제가 정리할게요'],['오후에 짧게 해요 시간은 따로 공유할게요','필요하면 잠깐 얘기해요']],
+[/힘들|피곤|지쳐|졸려/,['많이 힘드시죠 잠깐이라도 쉬세요','저도 요즘 좀 피곤해요','조금만 더 힘내요'],['무리하지 말고 쉬어가면서 해요','힘들면 말해줘요 일정 조정해볼게요','운학씨 요즘 고생이 많아요']],
+[/부탁|도와|도움/,['네 말씀하세요','어떤 건지 말씀해 주시면 볼게요','제가 할 수 있는 거면 도와드릴게요'],['네 말해봐요','어떤 건지 먼저 들어볼게요']],
+[/미안|죄송/,['괜찮아요 신경 쓰지 마세요','아니에요 괜찮아요','전혀 문제없어요'],['괜찮아요 너무 신경 쓰지 말아요','그럴 수도 있죠 괜찮아요']],
+[/ㅋㅋ|ㅎㅎ/,['ㅎㅎ','ㅋㅋ 그러게요','웃으니까 좋네요'],['ㅎㅎ 네','웃음이 나오네요 다행이에요']]];
+function rp0(id,t){var f,w,T=id==1;
+if(id==2){
+if(BAD.test(t))return pk(2,['미쳤냐?','야 말 똑바로 해','너 지금 뭐라고 했냐','어디서 욕이야','입 좀 조심해']);
+if(/퇴사|그만둘|그만두|사직|사표|관둘|관두/.test(t))return pk(2,[['갑자기 퇴사는 왜 해','일단 생각 좀 해봐'],'퇴사는 무슨 나중에 얘기하자','야 지금 결정할 일 아니잖아','그런 얘기를 왜 나한테 해']);
+if(/사랑/.test(t))return pk(2,['못 들은 걸로 할게','방금 건 못 들은 걸로 할게','어? 아무튼 못 들은 걸로 할게','내가 뭘 들은 거지 못 들은 걸로 할게']);
+if(/헤어|이별|우리 사이|그날/.test(t))return pk(2,['그 얘기는 지금 하고 싶지 않아','나중에 얘기하자 지금은 좀','바빠 다음에','지금 그 얘기는 좀','다음에 하자']);
+if(/보고싶|좋아해|안아|안고|자기야|뽀뽀|술|우리집|집에/.test(t))return pk(2,['미쳤냐?','야 선 넘지 마','정신 차려 ㅋㅋ','왜 그래 갑자기','그런 말 하지 마']);
+if(/어디/.test(t))return pk(2,['심문실이야','심문실에 있어 왜?','나 심문실','심문실 왜?']);
+if(/수치|가이딩/.test(t))return pk(2,['알아 알아 곧 할게','그건 이따 얘기하자','요즘 정신이 없어서 ㅠ','지금은 말고 나중에','이번 주 안에는 할게']);
+if(/밥|점심|저녁|식사/.test(t))return pk(2,['아직 안 먹었어','구내식당 갈 거야','생각 없어','먹을 시간이 없어']);
+if(/조서|서류/.test(t))return pk(2,['오늘 안에 넘길게','내일 오전까지 줄게','확인하고 보내줄게','정리되는 대로 보낼게']);
+if(/현장|출동|일정/.test(t))return pk(2,['나도 들었어','일정 공유받았어','알아 나도 나가야 돼']);
+return pk(2,['응','왜?','바빠','나중에 얘기하자','잠깐만',['응','근데 지금 바빠'],['왜?','급한 거야?'],'지금 심문 중이라 이따 말해줄게','말해봐','듣고 있어'])}
+if(BAD.test(t))return pk(id,['그런 표현은 좀 불편해요','말씀 좀 가려서 해주시면 좋겠어요','욕설은 좀 삼가 주세요']);
+if(/말 ?편하게|반말|말 ?놔/.test(t))return pk(id,['저는 이렇게 말하는 게 편해서요 :)','제가 이렇게 말하는 게 더 편해요','말은 지금처럼 해도 괜찮아요']);
+if(/애인|연애|사귀|남친|여친|결혼|연봉|나이|몇 ?살|어디 ?살|가족|이혼|헤어|전 ?애인|사생활/.test(t))return pk(id,['조금 사적인 질문이라 대답드리기가 불편해요','그건 말씀드리기 좀 곤란해요','그런 건 사적인 이야기라 답하기 어려워요']);
+if(/퇴사|그만둘|그만두|사직|사표|관둘|관두/.test(t))return pk(id,T?[['갑자기 퇴사라니 무슨 일 있어요?','일단 면담부터 해요'],['운학씨 일단 진정하고 얘기부터 해요','제가 들을게요'],['퇴사는 너무 갑작스러워요','먼저 얘기부터 나눠요']]:[['갑자기요?','일단 한 번만 더 생각해 보세요'],['퇴사까지는 좀 아쉬운데요','천천히 다시 생각해 보시면 안 될까요?'],'무슨 일 있으세요? 일단 얘기라도 나눠봐요','지금 결정하기엔 너무 이르지 않을까요?']);
+if(id==4&&/성호/.test(t)&&/밥|점심|식사|같이 ?(먹|드)/.test(t))return pk(4,['아까 여쭤봤는데 심문 때문에 바쁘시다고 거절당했어요','심문 때문에 바빠서 안 된다고 거절당했어요','성호 씨는 심문 때문에 바쁘시대요 거절당했어요']);
+if(/성호/.test(t)&&/어디|어딨|어딘|행방|위치|못 ?찾|봤|보셨|본 ?적|있나|있어|있는|있을|있죠|연락|찾/.test(t))return pk(id,T?['지금 시간이면 심문실에 있을 거예요','오늘 심문 일정이 있어서 심문실에 있을 거예요','심문실 쪽으로 간 걸로 알고 있어요']:['심문실에 있지 않을까요?','지금 시간이면 심문실에 계시지 않을까요?','심문실에 계실 것 같아요','아마 심문실에 있을 거예요 확실하진 않지만요']);
+if(/성호/.test(t)&&/부상|다쳤|다친|병원|치료/.test(t))return pk(id,T?['처치는 마쳤고 경과를 보고 있어요','의료·회복부에서 처치 받았어요 왼팔 쪽이에요']:['부상이 있었다고 들었어요 처치는 받았대요','심문 중에 다치셨다고 들었어요 지금은 경과 보는 중이래요']);
+if(/성호/.test(t)&&/상태|어때|어떠|괜찮|요즘|컨디션|안색|힘들|지쳐|걱정|근황|어떻게 ?지내/.test(t))return pk(id,T?[['성호 씨 요즘 많이 힘들어 보여요','그래서 운학씨한테 신경 써달라고 부탁드렸어요'],['저도 걱정이에요 요즘 많이 지쳐 보이더라고요','운학씨가 옆에서 조금만 챙겨주세요'],['성호 씨 요즘 말수도 줄고 많이 지쳐 보여요','무리하지 않게 같이 지켜봐 줘요']]:[['요즘 많이 힘들어 보이시더라고요','표정이 많이 지쳐 보여요'],['솔직히 요즘 좀 지쳐 보이세요','말씀은 안 하시는데 걱정돼요'],'요즘 통 쉬지 못하시는 것 같아서 힘들어 보여요','요즘 부쩍 말수가 줄어서 걱정이에요']);
+if(id==4){f=S.f[4];
+if(f=='alt'){w=t.replace(/\s*(먹고\s*싶어요?|먹을래요\??|먹어요|어때요\??|좋아요|할까요\??|가요)$/,'').replace(/(이요|이에요|예요|요)$/,'').trim();S.f[4]=0;return w?pk(4,['그럼 '+ro(w)+' 가시죠','좋아요 '+ro(w)+' 가시죠','네 '+ro(w)+' 가시죠']):'그럼 뭐가 좋으세요?'}
+if(f=='menu'){var y=yn(t),a;if(y=='w'&&(a=t.split(/말고|말구/)[1])&&(a=a.trim())&&!/^(이거|이걸|그거|그걸)/.test(a)){S.f[4]='alt';return rp0(4,a)}if(y=='n'){S.f[4]='alt';return pk(4,['그럼 다른 메뉴는 뭐가 좋으세요?','제육은 별로세요? 그럼 뭐가 좋으세요?','그럼 드시고 싶은 메뉴 말씀해 주세요'])}if(y=='y'||y=='c'||y=='w'||POS.test(t)){S.f[4]=0;return pk(4,['그럼 12시에 로비에서 봬요','좋아요 12시에 로비에서 만나요','네 12시에 로비에서 봐요'])}}
+if(/성호/.test(t)&&/밥|점심|식사|같이/.test(t))return pk(4,['아까 여쭤봤는데 심문 때문에 바쁘시다고 거절당했어요','심문 때문에 바빠서 안 된다고 거절당했어요','성호 씨는 심문 때문에 바쁘시대요 거절당했어요']);
+if(/누구|누가|동행/.test(t))return pk(4,['오세아 가이드님이랑 이도윤 센티넬님, 최윤아 센티넬님이랑 같이 가요','세아 씨랑 이도윤 센티넬님, 최윤아 센티넬님이랑 같이 가요','오세아 가이드님, 이도윤 센티넬님, 최윤아 센티넬님이랑 가요']);
+if(/메뉴|뭐 ?먹|뭘 ?먹|뭐 ?드|점심 ?뭐/.test(t)){S.f[4]='menu';return pk(4,['제육볶음 어떠세요?','점심으로 제육볶음은 어때요?','제육볶음 먹으러 갈까요?'])}}
+if((id==3||id==6)&&/점심|식사|밥/.test(t))return pk(id,['네 들었어요 12시에 로비에서 봬요','들었어요 12시에 로비에서 봬요','네 12시에 로비에서 봐요 얘기 들었어요','들었어요 그때 로비에서 봬요']);
+if(id==5&&/접수|서류|보고서/.test(t))return pk(5,[['사고·이상 상황 보고서 건이에요','박성호 센티넬이 심문 도중 부상을 입으셔서 보고가 올라갔었잖아요','페어이신 운학 씨가 다음 날 바로 보고하신 걸로 알고 있어요','그 뒤로 다른 얘기는 못 들었어요'],['사고·이상 상황 보고서 건은 이미 보고 완료된 걸로 알아요'],['보고서는 문서함에서 확인하실 수 있어요']],1);
+if(id==5&&/부상|다쳤|상태/.test(t))return pk(5,['저도 자세한 건 몰라서요 보고서에 정리된 내용만 알고 있어요','처치는 받았다고만 들었어요 자세한 건 보고서에 있어요']);
+if(id==6){f=S.f[6];
+if((f=='ask'&&WHY.test(t))||/어수선.*(왜|무슨|이유)|(왜|무슨).*어수선/.test(t)){S.f[6]='told';return pk(6,[['사실 10월 22일에 도심 상업지역에서 방화 사건이 있었어요','그 뒤로 현장 지원이 늘고 다들 예민해졌어요','테러 집단이 연관됐다는 얘기도 도는데 확인된 건 아니래요'],['아까 말한 방화 사건 때문이에요','센터 전체가 좀 긴장 상태예요']],1)}
+if(f=='hint'&&(LKR.test(t)||WHY.test(t)))return lk();
+if(f=='told'&&/서류|조작|기록|보안|조사|불려|끌려|위반|우월|그분들/.test(t))return lk();
+if(f=='ask'&&!WHY.test(t)&&(NEG.test(t)||POS.test(t)||nm(t).length<=6)){S.f[6]='hint';S.f.lk=1;return pk(6,NEG.test(t)?[['그런가요 저만 그렇게 느꼈나 봐요','근데 요즘 보안 점검은 확실히 늘었잖아요','서류 쪽으로 조사받은 분들도 있다던데요 ㅎㅎ 그냥 들은 얘기예요'],['그런가요 제가 예민한 걸 수도 있어요','요즘 보안 점검이 부쩍 늘긴 했잖아요','서류 문제로 불려 가신 분들도 있다던데 그냥 들은 얘기예요']]:[['그쵸 다들 좀 예민해져 있어요','요즘 보안 점검이 부쩍 늘었잖아요','서류 문제로 불려 가신 분들도 있다던데요 그냥 들은 얘기예요'],['맞아요 분위기가 좀 그래요','보안 점검도 잦아졌고요','서류 쪽으로 조사받은 분들 얘기도 들리던데 그냥 들은 거예요']])}
+if(f=='told'&&/누구|누가|집단|테러|범인|어떤|위험|안전|무서|잡/.test(t))return pk(6,['자세한 건 아직 공개가 안 됐어요','팀장님이 정리되는 대로 공유해 주신다고 했어요','저도 들은 얘기 정도라 확실하진 않아요','그래서 이번 현장 지원도 조심해야 해요','필요하면 팀장님께 직접 여쭤보세요 열람 권한이 필요할 수도 있어요']);
+if(f=='ask'&&NEG.test(t))return pk(6,['그런가요 저만 그렇게 느꼈나 봐요','저만 예민한 건가 봐요 ㅎㅎ']);
+if(f=='ask'&&POS.test(t))return pk(6,['그쵸 다들 좀 예민해져 있어요','네 분위기가 평소랑 달라요']);
+if(/어수선|분위기|뒤숭숭/.test(t)&&f!='told'){S.f[6]='ask';return pk(6,['그쵸 요즘 센터 분위기가 좀 그래요','네 저도 느껴요 다들 예민해 보여요'])}
+if(!S.f.q6){if(NEG.test(t)){S.f.q6=1;S.f[6]='ask';return ['그럼 일정 설명드릴게요 내일 11월 4일 저녁 6시 반에 3구역 게이트 앞에서 집결이에요','센터 차량으로 같이 이동하는데 방화 사건 추가 조사 지원이라 사무 쪽은 현장 기록 정리를 맡아요','차량 사용 신청서도 문서함에 올려뒀어요 확인 부탁드려도 될까요?','그나저나 요즘 센터가 좀 어수선하죠?']}
+if(POS.test(t)){S.f.q6=1;S.f[6]='ask';return ['네 알겠어요 :)','그나저나 요즘 센터가 좀 어수선하죠?']}}}
+for(var i=0;i<TOP.length;i++)if(TOP[i][0].test(t))return pk(id,T?TOP[i][2]||TOP[i][1]:TOP[i][1]);
+if(ACK.test(t.trim()))return pk(id,T?['네 고마워요','네 알겠어요','그래요']:['네 :)','넵','알겠어요']);
+if(QST.test(t))return pk(id,T?['글쎄요 좀 더 확인해 보고 알려줄게요','그건 만나서 얘기해요','일단 확인해 보고 말해줄게요']:['글쎄요 저도 정확히는 잘 모르겠어요','확인해보고 말씀드릴게요','그건 나중에 같이 얘기해봐요','음 잠깐만 생각해볼게요']);
+return pk(id,T?['그래요 알겠어요','네 참고할게요','알겠어요 고마워요','그렇군요']:['그렇군요','네 알겠어요','아 그렇구나 알겠어요','네 참고할게요'])}
+/* ===== 대화 엔진: 의도 분류 · 대화 맥락 · 기존 사건 · 정보 접근 수준 ===== */
+var LV={1:'K',2:'S',3:'D',4:'W',5:'W',6:'F'},lastN=0;
+function nm(t){return t.replace(/[\s~!?.…,]+/g,'')}
+function ctx(id){return S.cx[id]||(S.cx[id]={})}
+function busy(id){return(id==4&&S.f[4])||(id==6&&(!S.f.q6||S.f[6]=='ask'||S.f[6]=='hint'))}
+function yn(t){var s=t.trim();
+if(/^아니[,\s]?.*(좋|맞|괜찮|그렇|같)/.test(s)&&!/싫|별로|안 ?좋|안 ?맞|안 ?괜찮/.test(s))return 'c';
+if(/말고|말구/.test(s))return 'w';
+if(/싫|별로|안 ?돼|안 ?될|됐어|ㄴㄴ|패스|아뇨|아니요|아니오|아니에요|그냥 ?궁금|^아니[.!~ ]*$|^아니[,\s]+(난|나는|저는|전)? ?(안|못|별로)/.test(s))return 'n';
+if(POS.test(s)||/좋아|해줘|열어|부탁/.test(s))return 'y';return 0}
+function intent(t){var s=t.trim(),n=nm(s),y;
+if(BAD.test(s))return 'abuse';if(/^[ㅋㅎ]+$/.test(n))return 'laugh';
+if(/^(안녕|하이|반가)/.test(s))return 'greet';if(/감사|고마/.test(s))return 'thanks';if(/미안|죄송/.test(s))return 'sorry';
+if(/^(헐|헉|와|대박|엥)/.test(s))return 'wow';if(/걱정|불안|무섭|괜찮을까/.test(s))return 'worry';
+y=yn(s);if(y=='n')return 'refuse';if(y=='c')return 'correct';
+if(/부탁|해줘|해주세요|줄 ?수|알려/.test(s))return 'request';
+if(y=='y'&&n.length<8)return 'agree';if(QST.test(s))return 'ask';
+if(/서류|조서|결재|보고서|일정|근무|현장/.test(s))return 'work';
+return n.length<2||/^(그거|음|아|어|뭐|그래서|그)$/.test(n)?'unclear':'chat'}
+var FUK=[['why',/^(왜|왜요|왜그래|왜그런데|어째서|뭐때문에|그건왜)$/],['who',/^(누가|누구|그사람|언제|어디서)$/],['more',/^(그래서|그래서요|그래서뭐|그래서어떻게됐는데|어떻게됐는데|어떻게됐어|그리고|그다음|그게뭔데|그게뭐야|뭔데|뭐가|뭐|뭔소리야|무슨소리야|아그거|그거|음|아|어)$/],['conf',/^(진짜|진짜요|정말|정말요|ㄹㅇ|ㄹㅇ요|헐|헉|와|대박|엥|맞아|맞죠|맞아요)$/]];
+function fk(t){var n=nm(t),i;for(i=0;i<FUK.length;i++)if(FUK[i][1].test(n)&&!(/^맞/.test(n)&&!/\?/.test(t)))return FUK[i][0]}
+/* 사건 감지: 키워드만 보지 않고 문장 의도와 함께 판단 (예: '화재 안전교육'은 제외) */
+function evd(t){var e,s='gen';if(/명운단/.test(t))return{e:'arson',s:'org'};
+if(/방화|(2026|2026)-?1022|10월 ?22일|도심.{0,8}(사건|상가|상업)|상가.{0,4}사건|화재.*(사건|때문|그날|연관|범인|조사)|(사건|때문|그날|연관|범인|조사).*화재/.test(t)&&!/교육|훈련|점검|소방|대피|예방/.test(t))e='arson';
+else if(/테러/.test(t)&&/집단|연관|단체|조직|소문|배후/.test(t)){e='arson';s='rumor'}
+else if(/3구역|현장 ?지원|지원 ?(차량|인원|일정)|차량 ?(신청|승인)|18:?30|22:?00|6시 ?반|(출발|복귀).{0,6}(시간|언제|몇|예정)|(시간|언제|몇|예정).{0,6}(출발|복귀)/.test(t))e='zone3';
+if(e=='arson'&&s=='gen')s=/테러|집단|소문|배후|조직/.test(t)?'rumor':/자료|보고서|기록|문서|열람|권한|접근|공유|넘겨|보여/.test(t)?'doc':/누가|범인|피의자|잡혔|잡았/.test(t)?'who':/지원|근무|분위기|예민|바쁘|늘어|일정/.test(t)?'link':'gen';
+return e?{e:e,s:s}:null}
+/* 사건 지식: 캐릭터 정보 수준(K팀장 S성호 D조서담당 W일반 F현장지원)별 단계 공개. ~=대체 후보, |=연속 말풍선 */
+var KB={arson:{
+gen:{K:['10월 22일 도심 상업지역 방화 건 말하는 거 맞죠?|센터에서도 중요 사건으로 다루고 있어요|현장 지원이 늘어난 것도 그 영향이에요','공식적으로 확인된 건 능력 사용 정황과 큰 인명 피해가 있었다는 정도예요|조직 관련 내용은 대외비라 말하기 어려워요|조서는 지금 작성 중이고요','기록은 열람 제한이 걸려 있어서 말로는 여기까지예요|업무상 필요하면 말해줘요 권한 열어줄게요'],
+S:['그 방화 건? 난 잘 몰라~요즘 일정 바뀐 것만 알아','10월 22일 그 건이잖아 조서는 이도윤이 보고 있을걸','그 이상은 몰라 팀장님한테 물어봐'],
+D:['그 건은 제가 말씀드릴 수 있는 게 별로 없어요~조서 쪽이라 말하기가 조심스러워요','10월 22일 도심 상가 방화 건이에요 진술 조서 초안은 문서함에 올려뒀어요','제가 아는 건 조서에 있는 내용 정도예요|대외비 내용이 있어서 구체적으로는 말하기 어려워요','더 자세한 건 팀장님께 여쭤보시는 게 빠를 것 같아요'],
+W:['요즘 그 방화 사건 얘기 많이 하더라고요~사람들이 그 사건 얘기 많이 하긴 하더라고요','10월 22일 그 건이요 저도 공지로 본 것밖에 몰라요','내부에서도 말이 좀 나오긴 하는데 확인된 건 아니라서요','정확한 건 팀장님께 여쭤보세요'],
+F:['요즘 그 방화 사건 때문에 분위기가 좀 이상해요~그날 이후로 3구역 쪽 지원 일정이 계속 바뀌잖아요','10월 22일 도심 상업지역 건이요 현장 지원도 그래서 늘었고요','내부에서 말은 좀 나오는데 제가 아는 건 지원 쪽까지예요','자세한 건 팀장님께 여쭤보시는 게 맞을 거예요']},
+org:{K:['그 이름 어디서 들었어요?|대외비라서 함부로 입에 올리면 안 돼요','필요한 건 보고서로 확인하고 말로는 하지 말아요'],S:['그 이름 입에 올리지 마 대외비야','나도 말 못 해'],D:['그 이름은 조서에 있는 내용이라 말씀드리기 어려워요 대외비예요','열람 권한 있는 분들만 아는 내용이에요'],W:['그게 뭐예요? 처음 듣는데요','저는 처음 듣는 이름이에요 공지에는 없었던 것 같아요']},
+rumor:{K:['그 얘기는 저도 들었어요|근데 공식적으로 확인된 건 없어요','소문으로만 돌고 있어요 단정하지 말아요','확정된 게 아니니까 함부로 옮기지 말아요'],
+S:['그건 아직 확인된 거 아니잖아~소문은 나도 들었는데 공식적으로 나온 건 없지','나도 들은 건 있는데 확실한 건 몰라','그 얘기는 함부로 단정 안 하는 게 좋아'],
+D:['그건 아직 확인된 게 아니라서요~소문은 저도 들었는데 조서에 나온 내용은 아니에요','제가 말씀드리기는 조심스러워요 확인된 건 아니에요'],
+W:['내부에서도 말이 좀 나오긴 하더라고요|아직 확인된 건 아니라던데요','소문으로만 들었어요 공식적으로 나온 건 없잖아요','저도 확실한 건 몰라요'],
+F:['그 얘기 들었어요 아직 확인된 건 아니라던데요~내부에서도 말이 좀 나오긴 하더라고요','소문으로 도는 거라 확실한 건 모르겠어요|그래도 다들 신경은 쓰고 있어요','단정은 못 하겠어요 공식적으로 나온 건 없으니까요']},
+link:{K:['네 그 사건 이후로 현장 지원 요청이 늘었어요|3구역 지원도 그 연장이에요','근무표가 자주 바뀐 것도 그래서예요'],S:['그런가 보지 난 자세한 건 몰라~일정 바뀐 건 맞아'],W:['그런 것 같아요 그 사건 이후로 지원 일정이 계속 바뀌었어요~제가 알기로는 그래요 근무표도 자주 바뀌고요','다들 좀 예민해진 것 같기도 해요']},
+who:{K:['피의자 조서는 작성 중이에요|그 이상은 열람 제한이 있어서 말하기 어려워요'],S:['난 몰라~그건 조서 쪽에서 알겠지'],D:['조서 쪽 내용이라 제가 말씀드리기 어려워요'],W:['저는 거기까지는 몰라요~공지로 본 게 전부예요']},
+doc:{S:['기록은 팀장님한테 물어봐'],D:['조서 초안은 문서함에 있어요|그 외 기록은 팀장님 권한이에요'],W:['기록은 팀장님께 여쭤보시는 게 맞을 거예요|열람 제한이 있다고 들었어요']},
+why:{K:['사건 이후로 지원 요청이 늘어서 일정이 계속 바뀌고 있어요','보안 공지도 늘었고요'],S:['일정이 자꾸 바뀌어서 그래','지원 나가는 사람이 늘었잖아'],W:['그 방화 사건 이후로 현장 지원도 늘었고 괜히 다들 예민해져서요','근무표도 자꾸 바뀌고 보안 공지도 자주 올라와서요']}},
+zone3:{gen:{K:['내일 6시 반에 3구역 현장 지원이 있어요|방화 사건 추가 조사 지원이고 22시 복귀 예정이에요','운학씨도 탑승 인원에 들어가 있어요','추가 조사가 이어지고 있어서 지원 요청이 늘었어요 무리하지는 말아요'],S:['나도 들었어 방화 사건 추가 조사 나가는 거잖아','복귀는 10시쯤이라던데'],W:['3구역 현장 지원 말이죠 내일 6시 반 출발이에요|방화 사건 추가 조사 때문에 나가는 거래요~6시 반 출발이고 복귀는 22시 예정이래요','탑승 인원은 문서함에 있어요','그 사건 이후로 지원이 많이 늘었잖아요'],F:['제가 차량 신청했어요 내일 6시 반 출발이고 22시 복귀 예정이에요|방화 사건 추가 조사 지원이에요','탑승 인원은 문서함에 있어요','추가 조사가 이어지고 있어서 일정이 자주 바뀌어요']},
+why:{K:['방화 사건 이후로 현장 지원 요청이 늘어서요'],S:['지원이 늘었으니까'],W:['방화 사건 이후로 현장 지원 요청이 늘어서요','그래서 근무표도 같이 바뀌었어요']}},
+sung:{gen:{S:['괜찮아 일정대로 하면 돼~별일 아니야','검사 결과 나오면 알겠지','그 얘기 길게 하고 싶지 않아'],K:['','심문 중에 돌발 상황이 있었다고 해요|그 뒤로 감각 수치가 일시적으로 불안정했고요','페어 가이딩 권고가 나온 상태예요|그래서 운학씨한테 부탁드린 거예요'],W:['','심문실에서 사고가 있었다는 정도만 들었어요','그 뒤로 컨디션이 좀 안 좋아 보인다는 얘기는 들었어요']},
+why:{S:['심문 중에 좀 다친 것뿐이야'],K:['심문 중에 돌발 상황이 있었어요 그 뒤로 감각 수치가 일시적으로 불안정해졌고요'],W:['심문 중에 사고가 있었다고만 들었어요']}}};
+var CL={K:'말씀드릴 수 있는 건 여기까지예요 자세한 건 보고서로 봐요~이 이상은 제가 확정해서 말하기 어려워요',S:'더는 나도 몰라~그 이상은 팀장님한테 물어봐',W:'제가 아는 건 여기까지예요~기록을 다시 확인해 보시는 게 빠를 것 같아요'};
+function er(id,e,s){var L=LV[id],tb=KB[e]&&KB[e][s],a=tb&&(tb[L]||tb.W),k,n,st;if(!a)return;
+k=id+e+s;n=S.ec[k]||0;if(n<a.length&&!a[n])n++;S.ec[k]=n+1;lastN=n;
+st=n<a.length?a[n]:(CL[L]||CL.W);
+return pk(k+Math.min(n,a.length),st.split('~').map(function(x){var p=x.split('|');return p.length>1?p:x}))}
+function cf(id,c){var L=LV[id],ru=c.sub=='rumor';return pk(id+'cf',L=='K'?(ru?['확인된 게 아니라서 단정은 못 해요','공식적으로 확인된 건 없어요']:['네 제가 확인한 건 그래요','네 그렇게 보고받았어요']):L=='S'?(ru?['확인된 건 아니라니까','소문이라니까 단정하지 마']:['응 내가 들은 건 그래','응 그렇게 들었어']):ru?['소문으로만 들은 거라 확실하진 않아요','제가 아는 건 들은 것 정도예요']:['네 저는 그렇게 들었어요','제가 알기로는 그래요'])}
+/* 강태건 팀장: 방화 사건 문의 → 용도 확인 → 열람 권한 통지서 → 중간 정리 보고서 전달 */
+var PUR=/업무|조서|검토|지원|이도윤|현장|작성|정리|필요|확인해야|담당|페어|맡/,CUR=/궁금|그냥|호기심|심심/;
+function rep(){M.unshift({ty:'열람',t:'내부 문서 관리 실태 점검 결과 보고 (열람 제한)',f:'강태건 팀장',w:hm(),s:'i',id:1,at:2,
+kv:[['문서번호','보안관리-2026-1102-01'],['관련 사건','도심 상가 방화 사건 2026-1022-04'],['작성','보안관리과 점검반'],['열람 등급','열람 제한, 이력 기록'],['열람 권한','김운학 가이드, 강태건 팀장 부여']],
+b:'<p>1. 도심 상가 방화 사건 이후 실시된 내부 문서 전수 점검의 결과를 보고한 문서입니다. 전문 3쪽은 아래 붙임 파일에서 확인하실 수 있습니다.</p><p>2. 점검 과정에서 방화 사건 관련 기록이 의도적으로 누락 또는 조작된 정황이 확인되었습니다. 대상자 3명의 접근 권한이 박탈되었고, 이 중 1명이 사망하여 공소권 없음으로 처리되었습니다.</p><p>3. 사망한 대상자의 소지품에서 방화 사건 피의자들의 소지품과 같은 도안이 확인되었으나, 조직 관련성은 확정되지 않았습니다.</p><p class=nn>※ 추정 사항과 미확인 소문은 확정된 사실로 취급하지 마십시오. 열람 이력은 기록되며 외부 제공은 사전 승인 절차를 따라야 합니다.</p>'});
+note('📄','문서함','내부 문서 관리 실태 점검 결과 보고서가 도착했어요','docs');if(TV[cur.v])draw(false)}
+function grant(){S.f.k='granted';setTimeout(function(){M.unshift({ty:'열람',t:'사건 기록 열람 권한 부여 통지서',f:'강태건 팀장',w:hm(),s:'w',id:1,ok:['권한 수락','수락 완료'],no:['거절','거절함'],
+kv:[['대상 기록','도심 상가 방화 사건 (2026-1022-04)'],['부여 대상','김운학 가이드'],['부여 사유','조서 검토·현장 지원 업무'],['열람 범위','내부 문서 관리 실태 점검 결과 보고서'],['유의 사항','열람 이력 기록 · 외부 공유 금지']],
+b:'<p>강태건 팀장이 업무 목적 범위 안에서 위 기록의 열람 권한을 부여합니다.</p><p>정보 관리 강화 기준에 따라 열람 이력은 기록되며, 열람한 내용은 외부에 제공할 수 없습니다.</p><p class=nn>※ 수락하면 내부 문서 관리 실태 점검 결과 보고서가 문서함으로 전달됩니다.</p>',
+fn:function(v){if(v=='o'){S.f.k='sent';play(1,['권한 열렸어요','보고서 넘겨둘게요 외부 공유는 하지 말아요']);setTimeout(rep,3300)}else{S.f.k=0;play(1,'알겠어요 필요하면 다시 말해줘요')}}});
+note('📄','문서함','열람 권한 부여 통지서가 도착했어요','docs');if(TV[cur.v])draw(false)},3200);
+return['업무 목적이면 열람 권한 열어둘게요','통지서 올려둘게요 수락해 주면 돼요 열람 이력은 남으니까 참고해요']}
+function kang(t,s,it){var k=S.f.k,y=yn(t),wd=s=='doc'||/권한|열람|접근/.test(t),pu=PUR.test(t);
+if(k=='granted')return wd||it=='request'?pk(1,['통지서는 문서함에 올려뒀어요 수락만 해줘요','문서함에서 수락 먼저 눌러줘요']):undefined;
+if(k=='sent')return wd?pk(1,['보고서는 문서함에 넘겨뒀어요 외부 공유는 하지 말아요','문서함에 넘겨둔 보고서 확인해 봐요 열람 이력이 남아요']):undefined;
+if(k=='ask'){if(y=='n'||(CUR.test(t)&&!pu)){S.f.k=0;return['알겠어요 그럼 공지된 범위까지만 말해줄게요','자세한 기록은 업무상 필요할 때 다시 말해줘요']}
+if(pu||y=='y'||y=='c'||wd)return grant();return pk(1,['업무상 필요한 건지만 말해줘요','어떤 업무에 필요한지 말해줄래요?'])}
+if(wd){if(pu)return grant();S.f.k='ask';return pk(1,[['그 건은 열람 제한이 걸려 있어요','업무상 필요한 거예요?'],['기록은 권한이 있어야 볼 수 있어요','어떤 업무 때문에 필요한지 말해줄래요?']])}}
+function evl(id,t,c){var x=evd(t),k=fk(t),L=LV[id],r,s,e;
+if(/성호/.test(t)&&/현장/.test(t)&&/다쳤|다친|부상/.test(t)&&!/심문/.test(t)&&id!=2)return{r:id==6?pk(6,['그건 제가 정확히는 몰라요','저는 거기까진 잘 몰라요']):pk(id,['현장이 아니라 심문실에서 있었던 사고 아니었어요?','현장이 아니라 심문실 2에서 있었던 사고예요']),e:'sung',s:'gen'};
+if(/방화/.test(t)&&/10월 ?(?!22일)\d{1,2}일/.test(t))return{r:pk(id,L=='S'?['그거 10월 22일 건 아니었나']:['방화 사건은 10월 22일 건이에요','제가 알기로는 10월 22일 건이에요']),e:'arson',s:'gen'};
+if(id==2&&!x&&/다쳤|다친|부상|아프|병원|감각|몸 ?상태|상태|심문실 ?2|사고/.test(t))x={e:'sung',s:'gen'};
+if(id==1&&((x&&x.e=='arson')||(S.f.k=='ask'&&nm(t).length<=14)||(S.f.k&&/권한|열람|자료|보고서|문서/.test(t)))){r=kang(t,x?x.s:'gen',intent(t));if(r!==undefined)return{r:r,e:'arson',s:'doc'}}
+if(!x&&c.ev=='arson'&&/누가 ?(한|그랬|저질)|범인|피의자/.test(t))x={e:'arson',s:'who'};
+if(!x&&c.ev&&k&&!(id==6&&S.f[6]=='hint')){e=c.ev;if(k=='conf')return{r:cf(id,c),e:e,s:'conf'};s=k=='why'?'why':k=='who'&&e=='arson'?'who':(c.sub&&c.sub!='why'&&c.sub!='doc'&&KB[e][c.sub])?c.sub:'gen';x={e:e,s:s}}
+if(!x)return;
+r=er(id,x.e,x.s);if(r===undefined)r=er(id,x.e,'gen');if(r===undefined)return;
+if(id==1&&x.e=='arson'&&x.s=='gen'&&lastN==2&&!S.f.k)S.f.k='ask';
+return{r:r,e:x.e,s:x.s}}
+/* 일상 대화에 남은 사건의 흔적 [패턴, 일반, 성호, 연결 사건] */
+var TR=[[/사람.{0,6}(없|적|별로)|조용|한산|텅 ?비/,'현장 지원 나간 사람이 좀 있어서 그런가 봐요~지원 나간 사람이 좀 있어서 그런가요','현장 나간 사람 좀 있어서 그렇겠지','zone3'],
+[/야근/,'아마도요 일정 밀린 게 좀 있어서요~일정이 좀 밀려서 늦을 것 같아요','아마 일정 밀린 게 좀 있어서'],
+[/요즘.{0,8}(바빠|바쁘|정신없)|왜.{0,6}(바빠|바쁘)/,'최근에 현장 쪽 일정이 계속 겹쳐서요~현장 쪽 일정이 자꾸 겹쳐서 그래요','요즘 일정이 계속 겹쳐서','zone3'],
+[/분위기.{0,6}(이상|묘|어수|뒤숭)|요즘.{0,5}(이상|뒤숭|어수선)|근무표|보안 ?공지|일정 ?변경/,'요즘 근무표도 자주 바뀌고 다들 좀 예민해진 것 같아요~요즘 지원 일정이 계속 바뀌잖아요 괜히 다들 예민해진 것 같아요','요즘 일정이 자주 바뀌어서 다들 좀 그래','arson'],
+[/뭐 ?했/,'오전엔 서류 좀 처리했고 오후엔 일정 하나 있었어요','오전엔 조서 정리했고 오후엔 심문 하나 있었어'],
+[/^(지금|오늘)? ?뭐 ?(해|하|함|하고|하세요|하는)/,'서류 정리하고 있어요~일정 확인하고 있었어요','조서 정리하는 중이야~심문 준비 중이야']];
+function fin(id,r,e,s){var c=ctx(id),tx=[].concat(r).join(' '),x,k;
+if(e){c.ev=e;if(s&&s!='conf')c.sub=s}
+else{x=evd(tx)||(/성호/.test(tx)&&/부상|다쳤|다친|심문 중|사고/.test(tx)?{e:'sung',s:'gen'}:null);
+if(x){c.ev=x.e;c.sub=x.s;k=id+x.e+x.s;S.ec[k]=Math.max(S.ec[k]||0,1)}else{c.ev=0;c.sub=0}}
+c.k=/바빠|나중에|이따|심문 중이라/.test(tx)?'busy':0;return r}
+function rp(id,t){var c=ctx(id),it=intent(t),L=LV[id],o,i,r,k,g;
+if(it=='abuse')return fin(id,rp0(id,t));
+o=evl(id,t,c);if(o&&o.r!==undefined)return fin(id,o.r,o.e,o.s);
+if(id==1&&/검사|적합도/.test(t)&&!/방화/.test(t))return fin(id,pk(1,[['오늘 검사 때 성호 씨랑 같이 받아요','시간은 의료·회복부에서 정해주는 대로 가면 돼요'],['같이 가서 감각 수치도 같이 확인해 보면 좋겠어요']]));
+if(id==2&&/검사|적합도/.test(t))return fin(id,pk(2,['알아 팀장님한테 들었어','같이 받으라더라 시간 맞춰서 가자','검사 결과 나오면 알겠지']));
+for(i=0;i<TR.length;i++)if(TR[i][0].test(t)&&!(id==6&&TR[i][3]=='arson')){r=pk(id+'tr'+i,(L=='S'?TR[i][2]:TR[i][1]).split('~'));return fin(id,r,TR[i][3]||0,TR[i][3]?'gen':0)}
+if(id==2&&!/헤어|사랑|보고싶|이별/.test(t)){
+g={greet:['왔어?','어 왔네','안녕'],thanks:['응','별거 아냐','됐어'],sorry:['괜찮아','신경 쓰지 마'],worry:['걱정 마 괜찮아','괜찮아 일정대로 하면 돼','별일 아냐'],laugh:['왜 웃어','뭐가 그렇게 웃겨','ㅋㅋ 뭔데'],agree:['응','그래','맞지','그러니까']}[it];
+if(g)return fin(id,pk(2,g));
+if(/(예전|그때|옛날).{0,6}(얘기|일|말)/.test(t))return fin(id,pk(2,['그 얘기는 예전에 한 번 했잖아','그때 이후로는 괜찮아진 줄 알았는데','그건 나중에 얘기하자']))}
+if(!busy(id)&&!c.ev){k=fk(t);
+if(k&&!/^(음|아|어)$/.test(nm(t)))return fin(id,pk(id+'ab',id==2?['뭐가','뭐?','뭘?']:['어떤 거 말하는 거예요?','뭐가요?','무슨 얘기예요?']));
+if(it=='unclear'&&!ACK.test(t.trim()))return fin(id,pk(id+'un',id==2?['왜','말해','뭐']:id==1?['네 말해요','듣고 있어요']:['네?','말씀하세요','네 듣고 있어요']))}
+return fin(id,rp0(id,t))}
+function note(e,n,t,v,a){var b=$('#nt');b.dataset.a=v?'go':'x';b.dataset.v=v||'';b.dataset.i=a==null?'':a;
+b.innerHTML='<span class=av>'+e+'</span><div><b>'+n+'</b><div>'+esc(t)+'</div></div>';b.classList.add('on');clearTimeout(nto);nto=setTimeout(function(){b.classList.remove('on')},3500)}
+function inc(id,t){(S.c[id]=S.c[id]||[]).push({m:0,t:t,w:hm(),d:'오늘'});S.typ=0;bump(id);
+if(cur.v=='chat'&&cur.a==id)paint();else{S.u[id]=(S.u[id]||0)+1;note(P[id].n[0],P[id].n,t,'chat',id);if(TV[cur.v])draw(false)}}
+function play(id,r){r=Array.isArray(r)?r:[r];r.forEach(function(x,k){if(k)setTimeout(function(){S.typ=id;if(cur.v=='chat'&&cur.a==id)paint()},k*1500-700);setTimeout(function(){inc(id,x)},k*1500)})}
+function send(id,t){var nw=Date.now();if(nw-S.lt<450)return;S.lt=nw;(S.c[id]=S.c[id]||[]).push({m:1,t:t,w:hm(),d:'오늘'});if(S.c[id].length>300)S.c[id].splice(0,S.c[id].length-300);S.typ=id;bump(id);paint();var r=rp(id,t);setTimeout(function(){play(id,r)},1200+Math.random()*1500)}
+function rc(b){setTimeout(function(){var ids=[],m=0;b.c.forEach(function(c){if(c[1]!='o'&&c[1]!='m'&&ids.indexOf(c[1])<0){ids.push(c[1]);m=Math.max(m,+c[1])}});
+b.c.push([pk('bd',['ㅋㅋㅋㅋ','ㄹㅇ','저도요','공감합니다','ㅠㅠ 힘내요','나만 그런 게 아니었네','이게 맞냐','ㅇㅈ','와 이거 완전 내 얘긴데','진짜 그런 사람 있음','글쓴이 힘내세요','저희 팀도 그래요','ㅋㅋㅋ 이건 웃기네','근데 이거 누구 얘기임']),ids.length&&Math.random()<.5?rnd(ids):String(m+1)]);b.v+=3+(Math.random()*6|0);
+var i=B.indexOf(b);if(cur.v=='post'&&cur.a==i)draw(false);else note('💬','익명',b.me?'내 글에 댓글이 달렸어요':'댓글에 새 반응이 달렸어요','post',i)},2200)}
+function paint(){var m=$('#msgs');if(!m)return;var c=S.c[cur.a]||[],d,h='',p=P[cur.a],av=function(f){return '<span class=av2'+(f?'':' style=visibility:hidden')+'>'+p.n[0]+'</span>'};
+c.forEach(function(x,k){var pv=c[k-1],n=c[k+1];if(x.d!=d){d=x.d;h+='<div class=dv>'+d+'</div>';pv=null}
+var f=!pv||pv.m!=x.m,l=!(n&&n.m==x.m&&n.w==x.w&&n.d==x.d),tm=l?'<i class=tm>'+x.w+'</i>':'';
+h+=x.m?'<div class="r me'+(f?' f':'')+'"><div class=bw>'+tm+'<div class="b me">'+esc(x.t)+'</div></div></div>':'<div class="r'+(f?' f':'')+'">'+av(f)+'<div class=cl>'+(f?'<div class=nm>'+p.n+'</div>':'')+'<div class=bw><div class=b>'+esc(x.t)+'</div>'+tm+'</div></div></div>'});
+var q=c[c.length-1];if(S.typ==cur.a)h+='<div class="r'+(!q||q.m?' f':'')+'">'+av(!q||q.m)+'<div class=cl>'+(!q||q.m?'<div class=nm>'+p.n+'</div>':'')+'<div class="b ty"><i></i><i></i><i></i></div></div></div>';
+m.innerHTML=h;m.parentNode.scrollTop=m.parentNode.scrollHeight}
+var V={
+msgs:function(){return tp('메시지')+'<div class=bd><div class=g>'+S.o.map(function(i){var p=P[i],c=S.c[i]||[],x=c[c.length-1];
+return '<div class=c data-a=go data-v=chat data-i='+i+'>'+av(p)+'<div class=f><b>'+p.n+' <small>'+p.t+'</small></b><div class=s>'+(x?esc(x.t):'대화를 시작해 보세요')+'</div></div>'+(x?'<span class=s>'+(x.d=='오늘'?x.w:x.d.slice(5))+'</span>':'')+(S.u[i]?'<i class=ub>'+S.u[i]+'</i>':'')+'</div>'}).join('')+'</div><div class=ds>※ 가상의 설정으로 만든 창작물이며 실제 기관·인물과 무관해요.</div></div>'+tabs('msgs')},
+chat:function(i){S.u[i]=0;S.ph='메시지 입력';return nb(P[i].n+' <small>'+P[i].t+'</small>')+'<div class=bd><div id=msgs></div></div><div class="ib'+(S.kb?' kon':'')+'">'+fld()+'<button data-a=sub>↑</button></div>'+kbd()},
+docs:function(){var n=M.filter(function(d){return d.s=='w'}).length,tg={w:'처리 대기',o:'',x:''};
+return tp('문서')+'<div class=sgm><a class="'+(S.dt?'':'on')+'" data-a=seg data-i=0>내 문서함'+(n?'<i class=ub>'+n+'</i>':'')+'</a><a class="'+(S.dt?'on':'')+'" data-a=seg data-i=1>공지</a></div><div class=bd><div class=g>'+
+(S.dt?D.map(function(d,i){return '<div class=c data-a=go data-v=doc data-i='+i+'><div class=f><b style="font-weight:500;white-space:normal">[공지] '+d.t+'</b><div class=s>'+d.d+' · '+d.w+'</div></div><span class=s>›</span></div>'}).join('')
+:M.map(function(d,i){return '<div class=c data-a=go data-v=mdoc data-i='+i+'><div class=f><div class=s><em class="tg '+d.s+'">'+stl(d)+'</em> '+d.ty+' · '+d.f+' · '+d.w+'</div><b style="font-weight:500;white-space:normal">'+d.t+'</b></div><span class=s>›</span></div>'}).join(''))+'</div></div>'+tabs('docs')},
+doc:function(i){var d=D[i];return nb('공지')+'<div class=bd><div class=pg><h3>[공지] '+d.t+'</h3><div class=s>'+d.d+' · '+d.w+'</div><div class=dc>'+d.b+'</div><div class=sg>특수능력관리센터</div></div></div>'},
+mdoc:function(i){var d=M[i];return nb('문서')+'<div class=bd><div class=pg><em class="tg p">'+d.ty+'</em><h3>'+d.t+'</h3><div class=s>'+d.f+' · 오늘 '+d.w+'</div><div class=kv>'+d.kv.map(function(x){return '<div><span>'+x[0]+'</span><b>'+x[1]+'</b></div>'}).join('')+'</div><div class=dc>'+d.b+'</div></div>'+
+(d.s=='w'?'<div class=bt><button class=ok data-a=mp data-i='+i+' data-v=o>'+d.ok[0]+'</button>'+(d.no?'<button class=bn data-a=mp data-i='+i+' data-v=x>'+d.no[0]+'</button>':'')+'</div>':'<div class=pg><b>'+stl(d)+'</b><div class=s>'+(d.s=='i'?'열람 이력 기록됨 · 김운학 · 오늘 '+(d.vt=d.vt||hm())+' · 외부 공유 금지':'처리자 김운학 · 오늘 '+d.pt)+'</div></div>')+'</div>'},
+hr:function(){return tp('인사')+'<div class=bd><div class=pc>'+av(P[0],1)+'<b>김운학</b><div class=s>가이드 · 사무 담당 · 사번 SCC-1187</div></div><div class=g>'+
+'<div class=c><div class=f><b>출퇴근</b><div class=s>'+(S.att?'출근 '+S.att:'출근 전')+'</div></div><button class=pl data-a=att>'+(S.att?'퇴근':'출근')+'</button></div>'+
+'<div class=c><div class=f><b>잔여 연차</b><div class=s>총 15일 중</div></div><b class=big>'+S.leave+'일</b></div></div>'+
+'<h6>휴가 신청</h6><div class=g><div class=c><select id=lt><option>연차</option><option>반차</option><option>병가</option></select><input type=date id=ld style="flex:1"></div></div><div class=bt><button class=ok data-a=lv>신청하기</button></div>'+
+'<h6>신청 내역</h6><div class=g>'+(S.reqs.length?S.reqs.map(function(r){return '<div class=c><div class=f><b>'+esc(r.t)+'</b><div class=s>'+esc(r.d)+'</div></div><em class="tg '+r.s+'">'+L[r.s]+'</em></div>'}).join(''):'<div class=c><span class=s>신청 내역이 없어요</span></div>')+'</div><div class=ds>※ 가상의 설정으로 만든 창작물이며 실제 기관·인물과 무관해요.</div></div>'+tabs('hr')},
+bd:function(){return tp('자유게시판')+'<div class=bd><div class=g>'+B.map(function(b,i){
+return '<div class=c data-a=go data-v=post data-i='+i+'><div class=f><b style="font-weight:500;white-space:normal">'+b.t+'</b>'+(b.b?'<div class=s>'+b.b.replace(/<[^>]*>/g,' ').trim().slice(0,40)+'</div>':'')+'<div class=s>익명 · 특수능력관리센터 · '+b.w+'</div><div class=s><span class=gy>👁</span> '+vw(b)+' · <span class=gy>👍</span> '+b.l+' · 💬 '+b.c.length+'</div></div></div>'}).join('')+'</div></div><button class=fab data-a=go data-v=new>✏️</button>'+tabs('bd')},
+post:function(i){var b=B[i],mp={},n=0;S.ph='댓글 달기';return nb('게시글')+'<div class=bd><div class=pg><b>'+b.t+'</b><div class=s>익명 · 특수능력관리센터 · '+b.w+' · <span class=gy>👁</span> '+vw(b)+'</div>'+(b.b?'<p>'+b.b+'</p>':'')+'<div class=vt><button class="vb'+(b.k==1?' on':'')+'" data-a=up data-i='+i+'><span class=gy>👍</span> 추천 '+b.l+'</button><button class="vb'+(b.k==-1?' on':'')+'" data-a=down data-i='+i+'><span class=gy>👎</span> 비추천 '+b.d+'</button></div></div><h6>댓글 '+b.c.length+'</h6><div class=g>'+
+(b.c.length?b.c.map(function(c){var id=c[1]=='m'&&b.me?'o':c[1],lb;if(id=='o')lb='작성자';else{if(!mp[id])mp[id]=++n;lb='익명'+mp[id]}
+return '<div class=c><div class=f><b>'+lb+'</b><div>'+esc(c[0])+'</div></div></div>'}).join(''):'<div class=c><span class=s>첫 댓글을 남겨보세요</span></div>')+'</div></div><div class="ib'+(S.kb?' kon':'')+'">'+fld()+'<button data-a=sub>↑</button></div>'+kbd()},
+new:function(){S.ph='제목을 입력하세요';return nb('글쓰기','<a data-a=sub>등록</a>')+'<div class=bd><div class="g nw"><div class=nl>제목</div>'+fld(0,'t')+'<div class=nl>본문</div>'+fld(1,'b')+'</div><h6>모든 글은 익명으로 게시돼요 · 키보드의 줄바꿈 키로 본문 줄을 나눠요</h6></div>'+kbd()}};
+/* ===== 문서함(수신·작성 통합), 첨부 문서 뷰어 ===== */
+function kvh(a){return a.map(function(x){return '<div><span>'+x[0]+'</span><b>'+x[1]+'</b></div>'}).join('')}
+var DR=[{ty:'보고',t:'사고·이상 상황 보고서',to:'강태건 팀장',dt:'2026.10.26',w:'09:05',s:'s',pt:'09:20',
+kv:[['수신','강태건 팀장'],['발신','김운학 가이드'],['시행일자','2026.10.26'],['제목','사고·이상 상황 발생 보고'],['발생 일시','2026.10.25 13:40경'],['발생 장소','심문실 2'],['대상자','박성호 센티넬']],
+b:'<p>1. 관련: 도심 상가 방화 사건 피의자 심문 업무</p><p>2. 위 심문 중 발생한 사고의 경위 및 조치 사항을 아래와 같이 보고합니다.</p><ul><li>가. 사고 경위: 피의자 오재혁이 심문 도중 폭주를 일으켜 심문 담당자 박성호 센티넬이 왼팔에 부상을 입었습니다.</li><li>나. 응급 조치: 현장에서 응급 처치를 실시한 후 의료·회복부로 후송하였습니다.</li><li>다. 의료 소견: 처치가 완료되었으며, 감각 수치의 일시적 변동이 확인되어 페어 가이딩이 권고되었습니다.</li><li>라. 향후 조치: 페어 가이딩을 실시하고 경과를 관찰하며, 심문 일정은 재조정하겠습니다.</li></ul><p>3. 심문실 2는 사고 경위 확인 및 안전 점검을 위하여 사용을 중지하였습니다. 이상입니다.</p>'},
+{ty:'결재',t:'사건 기록 열람 권한 요청서',to:'강태건 팀장',w:'08:35',s:'d',btn:'결재 상신',
+fn:function(){if(S.f.k=='granted'||S.f.k=='sent')play(1,'권한은 이미 열어뒀어요 문서함 확인해 봐요');else play(1,grant())},
+kv:[['수신','강태건 팀장'],['발신','김운학 가이드'],['제목','사건 기록 열람 권한 요청'],['대상 기록','도심 상가 방화 사건 2026-1022-04 관련 내부 문서 관리 실태 점검 결과 보고서'],['요청 사유','조서 초안 검토 및 3구역 현장 지원 업무 수행']],
+b:'<p>1. 관련: 도심 상가 방화 사건 피의자 진술 조서 작성 건, 3구역 현장 지원 계획</p><p>2. 위 업무의 원활한 수행을 위하여 아래와 같이 사건 기록의 열람 권한을 요청하오니 승인하여 주시기 바랍니다.</p><ul><li>가. 대상 기록: 도심 상가 방화 사건 관련 내부 문서 관리 실태 점검 결과 보고서</li><li>나. 열람 목적: 조서 초안 검토 및 현장 지원 업무 수행</li><li>다. 열람 범위: 업무 수행에 필요한 범위로 한정</li></ul><p>3. 열람 이력 기록 및 외부 제공 금지 사항을 준수하겠습니다. 이상입니다.</p><p class=nn>※ 결재 상신을 누르면 강태건 팀장에게 전달됩니다.</p>',r:['열람 권한 요청 확인했어요']}];
+var SVG='<svg viewBox="0 0 64 64" width="72" height="72"><rect width="64" height="64" rx="8" fill="#ececf0"/><path d="M32 13L13 47H51Z" fill="none" stroke="#111" stroke-width="2"/><circle cx="32" cy="13" r="7" fill="#111"/><circle cx="13" cy="47" r="7" fill="#111"/><circle cx="51" cy="47" r="7" fill="#111"/><circle cx="32" cy="35" r="8" fill="#fff" stroke="#bbb"/></svg>';
+var ATT=[{n:'조서초안_2026-1022-04_v1.pdf',h:[
+'<h3>피의자 진술 조서 초안</h3><div class=kv>'+kvh([['사건명','도심 상가 방화 사건'],['사건번호','2026-1022-04'],['작성','이도윤 센티넬, 조서관리'],['근거 자료','심문 담당 박성호 센티넬 작성 심문 기록, 현장대응 보고'],['문서 상태','초안, 검토 중'],['분량','8쪽']])+'</div><h4>1. 사건의 개요</h4><p>가. 발생 일시: 2026년 10월 22일(목) 18시 40분경으로 추정된다.</p><p>나. 발생 장소: 도심 상업지역 중앙대로 일대에 소재한 지상 5층, 지하 1층 규모의 상가 건물이다. 연면적은 3,400㎡ 내외로 추정된다.</p><p>다. 범행 내용: 피의자들은 능력을 사용하여 위 건물에 방화하였고, 화염은 건물 전체로 확산되었다. 피해자 전원이 센터 소속이 아닌 일반 시민이고 범행이 불특정 다수를 대상으로 이루어졌으므로, 본 사건은 테러 범죄로 분류함이 상당하다.</p><p>라. 피해 결과: 사망자 26명이 확인되었고, 중상 38명 내외, 경상 100명 내외로 추정된다. 위 수치는 추가 확인 과정에서 변동될 수 있다.</p><p>마. 특이 사항: 화재 연기에 노출된 능력자에게서 능력 통제력이 급격히 저하되고 폭주가 유발되는 현상이 확인되었다. 현장에서 검거된 능력자 4명은 모두 폭주 전조 증상을 보였다.</p>',
+'<h4>2. 현장 상황</h4><p>가. 18시 42분 최초 신고가 접수되었고, 18시 44분 센터 현장대응팀 14명에게 출동이 지시되었으며, 18시 54분 현장에 도착하였다. 소방 방수는 18시 58분에 개시되었고 완전 진화는 22시 14분에 이루어졌다.</p><p>나. 도착 당시 건물 3층부터 5층까지 화염이 확산되어 있었다. 1층 출입구와 도로에는 대피한 시민과 부상자 130명 내외가 있었던 것으로 추정된다.</p><p>다. 화염은 일반 화재와 달리 상층으로 번지지 않고 외벽을 따라 수평 방향으로 확산되었으며, 방수에도 쉽게 진화되지 않았다.</p><p>라. 열기로 인근 차량 15대 내지 20대와 상가 유리창 200장 내외가 파손된 것으로 추정된다.</p>',
+'<h4>3. 연기 노출에 따른 능력자 이상 증상</h4><p>가. 화재 연기에 노출된 능력자에게서 능력 통제력이 급격히 저하되고 폭주가 유발되는 현상이 확인되었다. 연기의 구성 물질은 현재까지 특정되지 않았다.</p><p>나. 센터는 연기 흡입 방지 장비를 착용한 현장대응팀 14명을 투입하였다. 그러나 투입된 센티넬 3명이 감각 과부하 증상을 보였고, 가이드의 지원을 받은 뒤 임무에 복귀하였다.</p><p>다. 현장에서 검거된 능력자 4명은 시선이 풀린 채 고함을 지르고 열 방출을 통제하지 못하는 등 폭주 전조 증상을 보였다. 이는 연기 노출의 영향으로 추정된다.</p><p>라. 능력자가 아닌 일반 시민에게서는 호흡기 증상 외의 이상 증상이 보고되지 않았다. 호흡기 증상으로 이송된 인원은 70명 내외로 추정된다.</p><h4>4. 현장 정리 상태</h4><p>가. 현장에서는 조직의 표식, 서명, 성명문이 발견되지 않았다.</p><p>나. 1층 중앙 홀 바닥 중앙에 반경 1.8m의 원형 구역이 연소되지 않은 채 남아 있었다. 그 바깥쪽 바닥에는 반경 3.6m와 4.2m의 동심원 두 줄이 열에 그을려 새겨져 있었다.</p>',
+'<p>다. 사망자 11명이 원의 가장자리를 따라 균등한 간격으로 누워 있었다. 전원 머리가 원의 안쪽을, 발이 바깥쪽을 향하고 있었으며, 양손은 가슴 위에 포개어져 있었다. 신발은 벗겨져 각자의 발끝 쪽에 한 켤레씩 가지런히 놓여 있었다.</p><p>라. 원의 중심에는 중앙 안내 데스크가 옮겨져 있었고, 그 위에 사망자 11명의 지갑, 휴대전화, 신분증이 1인당 한 묶음씩 쌓여 있었다. 현장대응팀은 이 배치가 신전에서 제물을 올려 두는 형태와 유사하다고 기록하였다.</p><p>마. 위 11명에게서는 의복의 연소 흔적이 확인되지 않았다.</p>'+'<h4>5. 인명 피해</h4><p>가. 사망 26명이며, 현장에서 22명, 병원 이송 후 4명이 사망하였다. 중상 38명 내외, 경상 100명 내외로 추정된다.</p><p>나. 센터 소속 현장대응팀 센티넬 1명이 2도 화상으로 치료 중이며, 회복에 8주 내외가 소요될 것으로 추정된다.</p>',
+'<h4>6. 피의자의 인적사항 및 검거 경위</h4><p>가. 피의자 1 오재혁: 1992.03.14생, 만 34세, 남, 무직. 열 계열 능력자로 파악되어 최초 C등급으로 추정되었으나, 10월 25일 폭주 이후 실시한 정밀 검사에서 A등급 센티넬로 확인되었다. 센터 미등록, 전과 없음. 10월 22일 19시 12분경 건물 후면 골목에서 검거되었다.</p><p>나. 피의자 2 문재훈: 1985.09.02생, 만 41세, 남, 건설 현장 일용직. 열 계열 능력 D등급이며 2년 전 센터에 등록되었다. 전과 1건(폭행, 벌금 300만 원). 19시 25분경 건물 1층 로비에서 검거되었다.</p><p>다. 피의자 3 배소연: 1997.12.19생, 만 28세, 여, 편의점 근무. 열 계열 능력 C등급, 센터 미등록, 전과 없음. 19시 18분경 지하 1층 주차장 출구에서 검거되었다.</p><p>라. 피의자 4 조성윤: 생년월일 미기재, 만 37세로 추정, 남, 택배 기사. 열 계열 능력 D등급, 센터 미등록, 전과 1건(절도). 20시 48분경 인근 지하보도에서 검거되었다.</p><p>마. 인근 CCTV 기록에서 4명이 10월 17일부터 21일 사이 도심 외곽 폐창고에 함께 출입한 장면이 4회 확인되었다.</p>',
+'<h4>7. 심문 경과</h4><p>가. 심문은 박성호 센티넬이 전담하였다. 피의자별 심문 시간은 다음과 같다.</p><ul><li>오재혁: 10월 23일 10:00~12:20, 10월 24일 14:00~16:30, 10월 25일 13:00~13:40</li><li>문재훈: 10월 23일 14:00~15:40, 10월 24일 10:00~11:50</li><li>배소연: 10월 23일 16:10~17:30, 10월 24일 09:00~10:40</li><li>조성윤: 10월 26일 13:00~15:10, 10월 27일 10:00~11:30</li></ul><p>나. 4명은 서로 다른 시간대에 별도로 진행된 심문에서 각각 ‘명운단’이라는 명칭을 언급하였다. 언급 시각은 오재혁 10월 23일 11:42, 배소연 10월 24일 09:50, 문재훈 10월 24일 10:55, 조성윤 10월 26일 14:15이다. 조서 작성 단계에서 심문 기록을 대조하던 중 위 공통점이 확인되었다.</p><p>다. 범행 동기를 묻는 질문에 4명 모두 “정해진 일을 했다”는 동일한 문장으로 진술하였다. 오재혁과 배소연은 10월 17일부터 21일까지의 기억이 없다고 진술하였다.</p>',
+'<h4>8. 소지품에서 확인된 도안</h4><p>가. 소지품 대조 결과 동일한 도안이 피의자 3명에게서 확인되었다. 오재혁은 은색 펜던트 목걸이(직경 18mm 내외), 문재훈은 손목시계 케이스 안쪽 각인(직경 9mm 내외), 배소연은 지갑 안쪽 가죽에 눌러 새긴 형태(가로 22mm 내외)이다. 조성윤에게서는 확인되지 않았다.</p><p>나. 도안은 세 개의 검은색 구가 삼각형의 꼭짓점에 놓여 검은 선으로 서로 연결되어 있고, 그 중앙에 흰색 원형이 위치한 형태이다. 흔히 볼 수 있는 상징과 구별되는 특징이 뚜렷하지 않아 소지품을 처음 대조할 때에는 주목받지 못하였다. 크기와 소지 방식이 일관되지 않아 조직의 표식으로 단정하기는 어렵다. 감정은 10월 30일 의뢰되었으며, 결과 회신은 12월 4일 예정이다.</p><div style="text-align:center;margin:6px 0">'+SVG+'<div class=s>[그림 1] 도안 모사</div></div>',
+'<h4>9. 추가 파견</h4><p>가. 1차 파견(10월 25일)은 사건 현장 재조사를 위한 것이었다. 2차(10월 29일)와 3차(10월 31일) 파견은 심문 기록에서 ‘명운단’이라는 공통 명칭이 확인된 이후 조직과 관련된 흔적을 확인하기 위하여 실시되었다.</p><p>나. 3차례 모두 위 4항의 현장 상태가 재확인된 것 외에 조직의 흔적은 확인되지 않았다. 4차 조사는 11월 4일 18시 30분 3구역 일대에서 5명 규모로 실시될 예정이다.</p><h4>10. 판단</h4><p>가. 명운단이 본 사건의 배후에 있는지 여부는 심문 과정에서 확보한 진술에 근거한 추정에 불과하며, 이를 입증할 물증은 현재까지 확보되지 않았다.</p><p>나. 4명의 진술이 동일한 문장으로 일치하고 2명에게서 기억 공백이 확인된 점에 비추어, 피의자들의 정신에 개입하는 높은 등급의 정신계 센티넬이 조직을 조력하고 있을 가능성이 거론된다. 다만 이를 확정할 증거는 없다.</p><p>다. 조직의 규모가 거대할 것으로 추정되므로 센터는 관련 내용을 대외비로 관리한다.</p><h4>11. 특이 사항</h4><p>가. 10월 25일 13시 40분경 오재혁에 대한 세 번째 심문 중 오재혁이 폭주를 일으켜 심문 담당자 박성호 센티넬이 왼팔에 부상을 입었다. 폭주의 원인은 확인 중이며, 사고·이상 상황 보고서는 10월 26일 보고되었다.</p><p>나. 폭주 이후 실시한 정밀 검사에서 오재혁은 센터에 등록되지 않은 A등급 센티넬로 확인되었고, 이에 따라 최초 C등급 추정은 정정되었다.</p><p>다. 심문실 2의 사용이 중지되었으므로 잔여 심문은 재배정된 장소에서 실시한다. 내부에서 거론되는 미확인 소문은 확정된 사실로 취급하지 않는다.</p><p class=nn>※ 검토 필요: 피의자 4 조성윤의 생년월일 기재 확인</p><div class=s>작성 이도윤 센티넬 · 검토 김운학 가이드</div>']},
+{n:'심문대상자정보_2026-1019-02.pdf',h:[
+'<h3>심문 대상자 정보</h3><div class=kv>'+kvh([['사건명','장기매매 사건'],['사건번호','2026-1019-02'],['인계자','박성호 센티넬, 심문 담당'],['인계 대상','2명']])+'</div><h4>1. 사건의 개요</h4><p>가. 인지 일시: 2026년 10월 19일(월) 02시경으로 추정된다. 항만 물류창고 인근을 순찰하던 중 이송 차량이 적발되었다.</p><p>나. 범행 내용: 피의자들은 일반 시민을 모집·유인하여 불법 의료시설로 이송한 뒤 장기를 적출하고, 이를 매매하였다. 피의자들이 능력을 사용하여 범행하였으므로 본 사건은 센터가 수사를 담당한다.</p><p>다. 피해자: 20대에서 30대 사이의 일반 시민 17명 내외로 추정된다. 11명이 구조되었고, 소재가 확인되지 않은 인원은 6명 내외로 추정된다.</p><p>라. 거래 대금: 60억 원 내외로 추정된다.</p><h4>2. 피의자 1</h4><p>가. 성명: 윤태성, 1987.07.21생, 만 39세, 남, 무직</p><p>나. 능력: 중력 계열 B등급, 센터 미등록. 피해자를 제압하여 이송하는 데 능력을 사용하였다.</p><p>다. 역할: 피해자 모집 및 이송 총괄</p><p>라. 전과: 2건(폭행 1건, 절도 1건)</p><p>마. 검거: 10월 20일 23시 30분경, 항만 물류창고 인근</p>',
+'<h4>3. 피의자 2</h4><p>가. 성명: 한서진, 1994.11.05생, 만 31세, 여, 자동차 정비업</p><p>나. 능력: 전기 계열 C등급, 센터 미등록. 의료시설의 감시 장비를 무력화하는 데 능력을 사용하였다.</p><p>다. 역할: 이송 차량 개조 및 감시 장비 무력화</p><p>라. 전과: 없음</p><p>마. 검거: 10월 21일 04시 50분경, 자택</p><h4>4. 심문 경과</h4><p>가. 윤태성: 10월 22일 10:00~12:10, 10월 23일 14:00~16:40, 10월 25일 10:00~11:30</p><p>나. 한서진: 10월 22일 14:00~15:20, 10월 24일 10:00~12:00</p><h4>5. 진술 요지</h4><p>가. 윤태성은 피해자 모집과 이송을 인정하였고, ‘중개인’으로 불리는 인물의 지시를 받았다고 진술하였다.</p><p>나. 한서진은 이송 차량 개조와 감시 장비 무력화를 인정하였다.</p><p>다. 두 사람 모두 장기 적출을 담당한 인원이 1명 이상 더 있다고 진술하였으며, 해당 인원은 검거되지 않았다.</p><h4>6. 인계 사항</h4><p>심문 조서 2건을 이도윤 센티넬(조서관리)에게 인계하며, 접수를 요청한다.</p>']}];
+ATT.push({n:'점검결과보고_보안관리-2026-1102-01.pdf',h:[
+'<h3>도심 상가 방화 사건 관련 내부 문서 관리 실태 점검 결과 보고</h3><div class=kv>'+kvh([['문서번호','보안관리-2026-1102-01'],['작성','보안관리과 점검반'],['수신','강태건 팀장 외 2'],['작성일','2026.11.02'],['열람 등급','열람 제한, 열람 이력 기록'],['분량','3쪽']])+'</div><h4>1. 점검 배경 및 경과</h4><p>가. 2026년 10월 22일 발생한 도심 상가 방화 사건(사건번호 2026-1022-04)과 관련하여, 10월 23일 사건 관련 문서 3건의 열람 기록과 접속 기록이 일치하지 않는다는 보고가 보안관리과에 접수되었다.</p><p>나. 센터는 10월 24일 점검반 5명(보안관리과 3명, 감사담당관실 2명)을 편성하여 내부 문서 관리 실태 전수 점검에 착수하였다. 10월 26일까지는 단순 입력 오류 또는 시스템 오류의 가능성을 배제하지 않았다.</p><p>다. 10월 28일 일부 정보가 의도적으로 누락되거나 조작된 정황이 확인되었고, 10월 29일 대상자 3명의 문서 접근 권한을 박탈하고 불구속 수사로 전환하였다. 11월 1일 대상자 1명이 사망하여 11월 2일 공소권 없음으로 처리하였다.</p><h4>2. 점검 방법 및 범위</h4><p>가. 대상 기간은 9월 22일부터 10월 28일까지이며, 대상 문서는 4,200건 내외이다. 문서 작성·수정·삭제 이력, 열람 이력, 단말 접속 기록, 출입 기록을 상호 대조하였고 직원 22명 내외를 면담하였다.</p><p>나. 시스템 로그의 보관 기간이 90일이어서 그 이전 이력은 확인하지 못하였다.</p>',
+'<h4>3. 확인된 사항</h4><p>가. 기록의 누락: 방화 사건 심문 기록 사본 4건 중 2건에서 진술 구간이 삭제되었다. 박성호 센티넬 작성 원본과 대조한 결과 각각 6분 내외, 9분 내외 분량이 빠져 있었고, 삭제 구간에는 용의자가 ‘명운단’이라는 명칭을 언급한 부분이 포함되어 있었다. 이 때문에 용의자 4명의 공통점이 조서 작성 단계에서야 확인된 것으로 추정된다. 삭제는 10월 23일 22시 40분경부터 10월 24일 01시 10분경 사이에 이루어졌고, 삭제 단말은 기록관리과 서재원 주무관의 단말로 확인되었다.</p><p>나. 기록의 조작: 운영지원과 노미경 주무관이 현장대응 보고서 반출 승인서 2건의 승인자 서명란을 허위로 기재하였고, 배정·매칭과 지현수 주무관이 10월 23일부터 27일 사이 타인의 권한으로 방화 사건 심문 기록 등을 7회 내외 열람하였다. 위 행위들이 하나의 연관된 행위인지는 확정되지 않았다.</p><p>다. 접근 기록의 범위: 대상자 3명의 계정은 방화 사건 외의 다른 문서에도 장기간 여러 차례 접근한 기록이 있다. 다만 해당 문서들은 로그 보관 기간의 한계로 기록 대조가 불가능하여, 어떤 부분이 누락 또는 조작되었는지는 확인할 수 없다.</p><h4>4. 대상자 및 조치</h4><p>가. 서재원(1980.05.11생, 만 46세, 기록관리과, 감각 계열 센티넬 C등급), 노미경(1985.02.27생, 만 41세, 운영지원과, 가이드 B등급), 지현수(1988.09.09생, 만 38세, 배정·매칭과, 센티넬 D등급)이다.</p><p>나. 10월 29일 14시 문서 접근 권한 박탈, 업무 단말 회수, 대외비 구역 출입 제한을 실시하였다. 도주 우려가 낮고 면담에 협조하여 불구속 수사로 전환하였으며, 주 2회 출석 조사를 조건으로 하였다.</p><h4>5. 대상자의 성향 관련 확인 사항</h4><p>가. 면담 직원 6명이 대상자 3명에 대하여 ‘능력자가 일반 직원보다 높은 권한을 가져야 한다’는 취지의 발언을 한 적이 있다고 진술하였다. 내부 게시판에서도 같은 취지의 글 17건 내외가 대상자 계정으로 작성되었으며, 일부는 삭제된 상태였다.</p><p>나. 위 사항은 성향에 관한 정황이며 문서의 누락·조작 행위와의 인과관계는 확인되지 않았다.</p>',
+'<h4>6. 서재원 사망 경위 및 후속 처리</h4><p>가. 11월 1일(일) 07시 20분경 서재원이 자택에서 사망한 채 발견되었다. 관계 기관의 조사 결과 외부 침입 흔적이나 타살 혐의점은 확인되지 않았고, 본인의 선택에 의한 사망으로 판단되었다. 별도의 서면 유언은 확인되지 않았다.</p><p>나. 마지막 출석 조사는 10월 31일 오후에 있었으며 당시 특이 사항은 기록되지 않았다. 피의자 사망에 따라 11월 2일 공소권 없음으로 처리하였다.</p><p>다. 센터는 동료 직원을 대상으로 심리 상담을 지원하고 있으며, 필요한 직원은 인사 담당 부서에 신청할 수 있다.</p><h4>7. 유류품 및 소지품 조사</h4><p>가. 11월 2일 서재원의 자택과 센터 내 사물함을 조사한 결과, 책상 서랍에서 금속 열쇠고리 1개가 확인되었다. 열쇠고리 안쪽 면에는 세 개의 검은색 구가 삼각형의 꼭짓점에 놓여 검은 선으로 서로 연결되고 그 중앙에 흰색 원형이 위치한 도안이 각인되어 있었다.</p><div style="text-align:center;margin:6px 0">'+SVG+'<div class=s>[그림 1] 열쇠고리 각인 도안 모사</div></div><p>나. 위 도안은 방화 사건 피의자 3명의 소지품에서 확인된 도안과 육안 대조상 같은 형태이다. 노미경과 지현수의 소지품에서는 확인되지 않았다.</p><h4>8. 판단 및 향후 조치</h4><p>가. 방화 사건 관련 기록이 의도적으로 누락 또는 조작된 정황이 확인되어, 센터 내부에 해당 행위를 한 인원이 있었을 가능성이 있다. 다만 서재원의 도안 소지만으로 명운단의 구성원으로 단정할 수 없고, 노미경과 지현수의 관련성은 확인되지 않았다. 직접 진술을 더 확보할 수 없고 일부 문서는 기록 대조가 불가능하여, 위 판단은 모두 추정에 해당하며 실제 피해 범위도 확정할 수 없다.</p><p>나. 노미경과 지현수에 대한 수사 및 징계 절차를 계속하고, 로그 보관 기간을 1년으로 연장하며, 방화 사건 기록을 원본과 재대조하고 심문 기록을 이중 보관한다. 대외비 문서의 접근 권한 체계도 재편한다.</p><h4>9. 유의 사항</h4><p>본 문서는 열람 제한 문서로서 열람 이력이 기록되며 외부에 제공할 수 없다. 추정으로 기재된 사항과 내부에서 거론되는 미확인 소문은 확정된 사실로 취급하지 않는다.</p>']});
+function dstl(d){return d.s=='d'?'제출 전':d.s=='o'?'승인':d.ty=='결재'?'결재 대기':d.ty=='회신'?'회신 완료':'보고 완료'}
+V.docs=function(){var n=M.filter(function(d){return d.s=='w'}).length,nd=DR.filter(function(d){return d.s=='d'}).length,P=[],R=[],W,h,
+sg=function(i,l,b){return '<a class="'+(S.dt==i?'on':'')+'" data-a=seg data-i='+i+'>'+l+(b?'<i class=ub>'+b+'</i>':'')+'</a>'},
+row=function(v,i,tag,l,t){return '<div class=c data-a=go data-v='+v+' data-i='+i+'><div class=f><div class=s>'+tag+' '+l+'</div><b style="font-weight:500;white-space:normal">'+t+'</b></div><span class=s>›</span></div>'};
+if(S.dt==1)h='<div class=g>'+D.map(function(d,i){return '<div class=c data-a=go data-v=doc data-i='+i+'><div class=f><b style="font-weight:500;white-space:normal">[공지] '+d.t+'</b><div class=s>'+d.d+' · '+d.w+'</div></div><span class=s>›</span></div>'}).join('')+'</div>';
+else{M.forEach(function(d,i){(d.s=='w'?P:R).push(row('mdoc',i,'<em class="tg '+d.s+'">'+stl(d)+'</em>',d.ty+' · '+d.f+' · '+d.w,d.t))});
+W=DR.map(function(d,i){return row('ddoc',i,'<em class="tg '+(d.s=='d'?'w':'o')+'">'+dstl(d)+'</em>',d.ty+' · '+d.to+' · '+(d.dt?d.dt+' ':'')+d.w,d.t)});
+h=(P.length?'<h6>처리 대기</h6><div class=g>'+P.join('')+'</div>':'')+'<h6>작성한 문서</h6><div class=g>'+W.join('')+'</div>'+(R.length?'<h6>처리 완료</h6><div class=g>'+R.join('')+'</div>':'')}
+return tp('문서')+'<div class=sgm>'+sg(0,'내 문서함',n+nd)+sg(1,'공지')+'</div><div class=bd>'+h+'</div>'+tabs('docs')};
+V.mdoc=function(i){var d=M[i],a=d.at!=null&&ATT[d.at];return nb('문서')+'<div class=bd><div class=pg><em class="tg p">'+d.ty+'</em><h3>'+d.t+'</h3><div class=s>'+d.f+' · 오늘 '+d.w+'</div><div class=kv>'+kvh(d.kv)+'</div><div class=dc>'+d.b+'</div></div>'+
+(a?'<h6>첨부 파일</h6><div class=g><div class=c data-a=go data-v=att data-i='+d.at+'><span class=big>📎</span><div class=f><b style="font-weight:500">'+a.n+'</b><div class=s>PDF · '+a.h.length+'쪽 · 탭하여 열기</div></div><span class=s>›</span></div></div>':'')+
+(d.s=='w'?'<div class=bt><button class=ok data-a=mp data-i='+i+' data-v=o>'+d.ok[0]+'</button>'+(d.no?'<button class=bn data-a=mp data-i='+i+' data-v=x>'+d.no[0]+'</button>':'')+'</div>':'<div class=pg><b>'+stl(d)+'</b><div class=s>'+(d.s=='i'?'열람 이력 기록됨 · 김운학 · 오늘 '+(d.vt=d.vt||hm())+' · 외부 공유 금지':'처리자 김운학 · 오늘 '+d.pt)+'</div></div>')+'</div>'};
+V.ddoc=function(i){var d=DR[i];return nb('문서')+'<div class=bd><div class=pg><em class="tg p">'+d.ty+'</em><h3>'+d.t+'</h3><div class=s>작성자 김운학 · '+(d.dt||'오늘')+' '+d.w+' · 수신 '+d.to+'</div><div class=kv>'+kvh(d.kv)+'</div><div class=dc>'+d.b+'</div></div>'+
+(d.s=='d'?'<div class=bt><button class=ok data-a=dp data-i='+i+'>'+d.btn+'</button></div>':'<div class=pg><b>'+dstl(d)+'</b><div class=s>'+d.to+' · '+(d.dt||'오늘')+' '+d.pt+'</div></div>')+'</div>'};
+V.att=function(i){var a=ATT[i];return nb('첨부 파일')+'<div class=bd><div class=s style="text-align:center;margin:8px">'+a.n+'</div>'+a.h.map(function(p,k){return '<div class=ppr>'+p+'<div class=pn>— '+(k+1)+' / '+a.h.length+' —</div></div>'}).join('')+'</div>'};
+function dpf(i){var d=DR[i];if(d.s!='d')return;d.s='s';d.pt=hm();draw(false);setTimeout(function(){if(d.fn)d.fn();else play(d.pid||1,d.r);if(d.ty=='결재')setTimeout(function(){d.s='o';if(/^(docs|ddoc)$/.test(cur.v))draw(false)},2200)},2000+Math.random()*1500)}
+/* 오세아: 묻지 않아도 조심스럽게 흘리는 정보 */
+var LKR=/서류|조작|기록|보안|조사|불려|끌려|위반|우월|그분들|그 사람들|자세히|무슨 일|누가|누구|어떤|뭔데|그래서|더/;
+var LK=[['정확한 건 저도 몰라요|기록이 원래랑 좀 다르게 적혀 있었다던가 그런 얘기였어요','감사 쪽에서 몇 분 불려 갔다는 정도만 들었어요|자세한 건 몰라요'],
+['지워진 기록도 있었다고 하던데 확실한 건 아니에요|보안 규정 쪽이라 다들 말을 아끼더라고요','그래서 요즘 다들 서류 올릴 때 두 번씩 확인하잖아요'],
+['불려 가신 분들이 평소에 좀 그랬대요|능력 좋은 사람이 더 대우받아야 한다는 말을 자주 하셨다고요 그냥 들은 얘기예요','제가 뭐라 할 입장은 아니고요|그분들 얘기는 다들 조심스러워해요'],
+['그 방화 사건이랑 관련 있는지는 저는 몰라요|괜히 엮어서 말하지는 말아요','관련 있다 없다 말하긴 일러요 아직 아무도 몰라요'],
+['이 얘기는 여기서만 해요 어디 가서 말하면 곤란해져요','더 궁금하시면 팀장님께 직접 여쭤보시는 게 맞을 거예요']];
+function lk(){var n=S.f.lk||1;S.f.lk=n+1;S.f[6]='hint';return pk('lk'+Math.min(n,5),LK[Math.min(n-1,LK.length-1)].map(function(x){var p=x.split('|');return p.length>1?p:x}))}
+function draw(an){var o=$('#app .bd'),y=o?o.scrollTop:0;
+$('#app').innerHTML='<div class="v'+(an?' an':'')+'">'+V[cur.v](cur.a)+'</div>';
+if(cur.v=='chat')paint();else if(!an){var n=$('#app .bd');if(n)n.scrollTop=y}}
+function go(v,a){if(v=='post'&&B[a])B[a].v=vw(B[a])+1;if(TV[v])st=[];else st.push(cur);cur={v:v,a:a};S.kb=v=='new'?1:0;S.t='';S.nb='';S.fo='t';S.sh=0;draw(true)}
+function back(){cur=st.pop()||{v:'msgs'};S.kb=0;S.t='';S.nb='';S.fo='t';S.sh=0;draw(true)}
+function sub(){if(cur.v=='new'){var cl=function(x){return String(x).replace(/[\u0000-\u0009\u000B-\u001F\u007F\u200B-\u200F\u202A-\u202E\u2066-\u2069]/g,'')},tt=cl(S.t).trim(),bb=cl(S.nb).replace(/\n{3,}/g,'\n\n').trim();
+if(!tt&&bb){var ls=bb.split('\n');tt=ls.shift().trim();bb=ls.join('\n').trim()}
+if(!tt){note('🔔','게시판','제목을 입력해 주세요');S.fo='t';draw(false);return}
+if(B.length>=40){note('🔔','게시판','게시글이 너무 많아요');return}
+var n={t:esc(tt.slice(0,60)),b:esc(bb.slice(0,800)).replace(/\n/g,'<br>'),w:'방금',v:3,l:0,d:0,k:0,c:[],me:1};B.unshift(n);S.t='';S.nb='';S.fo='t';S.kb=0;st=[];cur={v:'bd'};draw(true);rc(n);return}
+var t=S.t.replace(/[\u0000-\u001F\u007F\u200B-\u200F\u202A-\u202E\u2066-\u2069]/g,'').trim();if(!t)return;S.t='';
+if(cur.v=='chat'){send(cur.a,t);ftxt()}
+else if(cur.v=='post'){var b=B[cur.a];if(b.c.length>=60){note('🔔','게시판','댓글이 너무 많아요');return}b.c.push([t,'m']);b.v+=1;rc(b);draw(false);var q=$('#app .bd');q.scrollTop=q.scrollHeight}
+}
+function sr(){clearTimeout(rt);clearInterval(rt)}
+$('#sc').addEventListener('pointerdown',function(e){var k=e.target.closest('[data-k]');if(!k)return;e.preventDefault();var c=k.dataset.k;
+k.classList.add('dn');setTimeout(function(){k.classList.remove('dn')},80);key(c);
+if(c=='⌫'){sr();rt=setTimeout(function(){rt=setInterval(function(){key('⌫')},55)},380)}});
+['pointerup','pointercancel','touchend'].forEach(function(n){addEventListener(n,sr)});
+$('#sc').addEventListener('click',function(e){var T=e.target;if(T.closest('[data-k]'))return;
+var t=T.closest('[data-a]'),a=t&&t.dataset.a,i=t?+t.dataset.i:0;
+if(!t){if(S.kb&&T.closest('.bd')){S.kb=0;draw(false)}return}
+if(a!='x')$('#nt').classList.remove('on');
+switch(a){
+case 'go':go(t.dataset.v,t.dataset.i===undefined?undefined:i);break;
+case 'back':back();break;
+case 'fk':if(cur.v=='new'&&t.dataset.f&&S.fo!=t.dataset.f){S.fo=t.dataset.f;S.kb=1;draw(false)}else if(!S.kb){S.kb=1;draw(false)}break;
+case 'sub':sub();break;
+case 'att':if(S.att){S.att=null;note('🔔','근태','퇴근 처리되었습니다. 수고하셨어요!')}else{S.att=hm();note('🔔','근태','출근 처리되었습니다 ('+S.att+')')}draw(false);break;
+case 'lv':var ty=$('#lt').value,dt=$('#ld').value,c={'연차':1,'반차':.5,'병가':0}[ty];
+if(!dt)return note('🔔','인사','휴가 날짜를 선택해 주세요');if(c>S.leave)return note('🔔','인사','잔여 연차가 부족해요');
+var r={t:ty,d:dt,s:'w'};S.reqs.unshift(r);S.leave-=c;draw(false);
+setTimeout(function(){r.s='o';if(cur.v=='hr')draw(false);inc(1,'휴가 신청 승인했어요 푹 쉬고 오세요!')},3000);break;
+case 'seg':S.dt=i;draw(false);break;
+case 'mp':var d=M[i],pv=t.dataset.v;d.s=pv;d.pt=hm();draw(false);setTimeout(function(){d.fn?d.fn(pv):inc(d.id,d.r[pv=='o'?0:1])},2000+Math.random()*1500);break;
+case 'dp':dpf(i);break;
+case 'up':case 'down':var b=B[i],v=a=='up'?1:-1;if(b.k==1)b.l--;if(b.k==-1)b.d--;if(b.k==v)b.k=0;else{b.k=v;if(v==1)b.l++;else b.d++}draw(false);break}});
+var KM={KeyQ:'ㅂ',KeyW:'ㅈ',KeyE:'ㄷ',KeyR:'ㄱ',KeyT:'ㅅ',KeyY:'ㅛ',KeyU:'ㅕ',KeyI:'ㅑ',KeyO:'ㅐ',KeyP:'ㅔ',KeyA:'ㅁ',KeyS:'ㄴ',KeyD:'ㅇ',KeyF:'ㄹ',KeyG:'ㅎ',KeyH:'ㅗ',KeyJ:'ㅓ',KeyK:'ㅏ',KeyL:'ㅣ',KeyZ:'ㅋ',KeyX:'ㅌ',KeyC:'ㅊ',KeyV:'ㅍ',KeyB:'ㅠ',KeyN:'ㅜ',KeyM:'ㅡ'};
+document.addEventListener('keydown',function(e){if(!/^(chat|post|new)$/.test(cur.v)||e.ctrlKey||e.metaKey||e.altKey)return;var c=e.code||'',k=e.key,x;
+if(k=='Backspace')x='⌫';else if(k=='Enter')x='↵';else if(k==' ')x='_';
+else if(/^Key[A-Z]$/.test(c))x=S.en?(e.shiftKey?c[3]:c[3].toLowerCase()):(KM[c]?(e.shiftKey&&SH[KM[c]])||KM[c]:null);
+else if(/^Digit\d$/.test(c)&&!e.shiftKey)x=c[5];else if(k&&k.length==1&&',.?!'.indexOf(k)>=0)x=k;
+if(!x)return;e.preventDefault();if(!S.kb){S.kb=1;draw(false)}key(x)});
+function fit(){var s=Math.min(1,(innerWidth-8)/417,(innerHeight-16)/876);$('#ph').style.transform='scale('+s+')'}
+addEventListener('resize',fit);fit();
+function tick(){var m=hm().split(':');$('#ck').innerHTML=((+m[0])%12||12)+':'+m[1]+'<small style="font-size:12px;font-weight:500;margin-left:6px">11/3 (화)</small>'}tick();setInterval(tick,5000);
+draw(false);
+</script></body></html>
